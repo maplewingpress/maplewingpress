@@ -2,7 +2,9 @@
 layout: default
 ---
 <div class="wrap narrow page">
+  {% if page.logo %}<h1 class="logo-title"><img src="{{ page.logo | relative_url }}" alt="{{ page.title }}" width="420" height="104"></h1>
   {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
-  <h1>{{ page.title }}</h1>
+  {% else %}{% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+  <h1>{{ page.title }}</h1>{% endif %}
   {{ content }}
 </div>
