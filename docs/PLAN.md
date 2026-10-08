@@ -1,15 +1,15 @@
 # Website plan (Stage 1 proposal, Oct 8 2026)
 
 ## Visual direction
-Boutique storybook press: warm paper background, walnut-ink text, maple russet for links and buttons, dry-samara gold for small accents only. Maplewing Dreams uses twilight blue as its line color; Maplewing Lane uses meadow green. Fraunces for headings, Atkinson Hyperlegible for body text (designed for low-vision readers). Body text is 20px, buttons are at least 56px tall, and every text color passes WCAG AA (most pass AAA). No animation, no pop-ups, no stock imagery. Palette and fonts are placeholders from logo round one and change in one place (`assets/css/site.css`, `:root`).
+Boutique storybook press: warm paper background, walnut-ink text, maple russet for links and buttons, dry-samara gold for small accents only. Maplewing Dreams uses twilight blue as its series color. Fraunces for headings, Atkinson Hyperlegible for body text (designed for low-vision readers). Body text is 20px, buttons are at least 56px tall, and every text color passes WCAG AA (most pass AAA). No animation, no pop-ups, no stock imagery. Palette and fonts are placeholders from logo round one and change in one place (`assets/css/site.css`, `:root`).
 
 ## Navigation
-Top bar: Coloring Stories (Dreams) · Children's Readers (Lane) · For Facilities · Book Bonuses · About. Footer: Contact & policies, printable pages, email. Plain words over brand names in the nav, so a first-time visitor knows where to click.
+Top bar: Coloring Stories (Dreams) · For Facilities · Book Bonuses · About. Maplewing Lane is a future concept and stays off the site until Tracy says otherwise (Oct 8). Footer: Contact & policies, printable pages, email. Plain words over brand names in the nav, so a first-time visitor knows where to click.
 
 ## Homepage wireframe
 1. Header with samara mark and nav.
 2. Hero: one sentence on what Maplewing makes, two buttons ("See the coloring stories", "I have a book"), cover image on the right.
-3. Two line cards: Maplewing Dreams and Maplewing Lane.
+3. Maplewing Dreams series card. Maplewing Press itself stays general, since other kinds of books may follow.
 4. "One story, three ways to color": Easy, Easier, Easiest.
 5. Two short paths: facilities, and book owners looking for printable pages.
 6. Optional mailing-list box (hidden until the Kit form exists).
@@ -27,7 +27,7 @@ Top bar: Coloring Stories (Dreams) · Children's Readers (Lane) · For Facilitie
 1. Foundation (this PR): layout, design tokens, home, nav, all Stage 1 pages, Halloween bonus pages.
 2. Halloween launch: real cover art, Amazon links, Google Form per level, Kit signup, QR codes, then the custom domain (with approval).
 3. Direct sales: Payhip checkout, facility license pages and protected delivery.
-4. Catalog expansion: Monarch's Journey, Christmas, Lane titles.
+4. Catalog expansion: Monarch's Journey, Christmas, and other titles.
 
 ## Turning on GitHub Pages (Tracy approves first)
 In the repo: Settings → Pages → Source: "Deploy from a branch", Branch: `main`, folder `/ (root)`. With the `CNAME` file in place, the site appears at https://maplewingpress.com once DNS has spread.
