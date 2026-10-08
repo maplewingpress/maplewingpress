@@ -21,7 +21,6 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 | `/dreams/halloween/e2/bonus/` | Printable pages, Halloween Easier |
 | `/dreams/halloween/e3/bonus/` | Printable pages, Halloween Easiest |
 | `/halloween-classic/`, `/halloween-e1/`, `/halloween-e2/`, `/halloween-e3/` | Short links that forward to the bonus pages (easy to type from a book) |
-| `/lane/` | Maplewing Lane (coming soon) |
 | `/facilities/` | Facility licensing |
 | `/bonuses/` | Find your book's printable pages |
 | `/about/`, `/contact/` | About; Contact and policies |
