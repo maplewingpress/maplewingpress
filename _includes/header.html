@@ -1,0 +1,19 @@
+<a class="skip" href="#main">Skip to main content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/img/samara.svg' | relative_url }}" alt="" width="64" height="48">
+      <span>Maplewing Press</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav">
+        {% assign s = page.section %}
+        <li><a href="{{ '/dreams/' | relative_url }}"{% if s == 'dreams' %} aria-current="page"{% endif %}>Coloring Stories</a></li>
+        <li><a href="{{ '/lane/' | relative_url }}"{% if s == 'lane' %} aria-current="page"{% endif %}>Children's Readers</a></li>
+        <li><a href="{{ '/facilities/' | relative_url }}"{% if s == 'facilities' %} aria-current="page"{% endif %}>For Facilities</a></li>
+        <li><a href="{{ '/bonuses/' | relative_url }}"{% if s == 'bonuses' %} aria-current="page"{% endif %}>Book Bonuses</a></li>
+        <li><a href="{{ '/about/' | relative_url }}"{% if s == 'about' %} aria-current="page"{% endif %}>About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

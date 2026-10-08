@@ -1,0 +1,14 @@
+# Maplewing Press site settings. GitHub Pages builds this with Jekyll automatically.
+title: Maplewing Press
+description: Gentle coloring stories for older adults, and storybook readers for young learners.
+# The site is served at the custom domain (see the CNAME file), so baseurl stays empty.
+url: "https://maplewingpress.com"
+baseurl: ""
+contact_email: hello@maplewingpress.com
+facilities_email: facilities@maplewingpress.com
+support_email: support@maplewingpress.com
+# Optional email list (Kit). Leave blank until the Kit form exists; the signup box hides itself.
+kit_form_url: ""
+exclude:
+  - README.md
+  - docs/
