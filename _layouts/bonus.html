@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<div class="wrap narrow page bonus">
+  <p class="eyebrow">For owners of {{ page.book }}</p>
+  <h1>Your printable pages</h1>
+  <p class="lead">Thank you for coloring with us. The printable pages included with your <strong>{{ page.level_name }}</strong> book are ready to print at home, as many times as you like for your own household.</p>
+
+  <ol class="steps">
+    <li>
+      <h2>Tell us your Amazon order number</h2>
+      <p>You can find it in your Amazon account under <em>Your Orders</em>. It looks like <span class="mono">123-1234567-1234567</span>.</p>
+    </li>
+    <li>
+      <h2>Open your pages</h2>
+      <p>After you send the short form, the download link appears on the screen. Print on plain or heavier paper, one side only.</p>
+    </li>
+  </ol>
+
+  {% if page.form_url and page.form_url != "" %}
+  <p><a class="button" href="{{ page.form_url }}">Get my printable pages</a></p>
+  {% else %}
+  <p class="card notice"><strong>Coming soon.</strong> These pages are being finished. Please check back, or write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> and we will send them to you.</p>
+  {% endif %}
+
+  <p class="small">These pages are for one household or private caregiving for up to four people. Caring for more people in a facility? See <a href="{{ '/facilities/' | relative_url }}">facility licenses</a>.</p>
+
+  {% include kit-signup.html %}
+
+  <p class="small">Need help? Write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a>.</p>
+</div>
