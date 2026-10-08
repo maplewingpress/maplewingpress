@@ -30,7 +30,7 @@ Top bar: Coloring Stories (Dreams) · Children's Readers (Lane) · For Facilitie
 4. Catalog expansion: Monarch's Journey, Christmas, Lane titles.
 
 ## Turning on GitHub Pages (Tracy approves first)
-In the repo: Settings → Pages → Source: "Deploy from a branch", Branch: `main`, folder `/ (root)`. The site then appears at https://maplewingpress.github.io/maplewingpress/.
+In the repo: Settings → Pages → Source: "Deploy from a branch", Branch: `main`, folder `/ (root)`. With the `CNAME` file in place, the site appears at https://maplewingpress.com once DNS has spread.
 
 ## Connecting maplewingpress.com (Tracy approves first; not done yet)
 1. GitHub org settings → Pages → "Add a verified domain": `maplewingpress.com`. GitHub shows one TXT record to add at Namecheap. This stops anyone else from claiming the domain on GitHub.
@@ -46,4 +46,4 @@ In the repo: Settings → Pages → Source: "Deploy from a branch", Branch: `mai
 | TXT | (from step 1) | (from step 1) |
 
 3. Repo Settings → Pages → Custom domain: `maplewingpress.com`, then tick "Enforce HTTPS" once it is offered.
-4. In `_config.yml` set `url: "https://maplewingpress.com"` and `baseurl: ""`.
+4. Done in the repo (Tracy approved Oct 8): the `CNAME` file holds `maplewingpress.com`, and `_config.yml` uses `url: "https://maplewingpress.com"` with `baseurl: ""`.
