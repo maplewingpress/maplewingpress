@@ -107,12 +107,34 @@ a:hover { color: var(--russet-dark); text-decoration-thickness: .14em; }
 .footer-brand { display: flex; align-items: center; gap: .5rem; font: 600 1.3rem var(--display); }
 .footer-links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem 2rem; }
 
+/* Phone menu: a single "Menu" button that opens a list of large links */
+.nav-phone { display: none; }
+.nav-phone summary { list-style: none; cursor: pointer; font-weight: 700; color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: .45rem 1.1rem; min-height: 48px; display: flex; align-items: center; }
+.nav-phone summary::-webkit-details-marker { display: none; }
+.nav-phone summary::after { content: "\25BE"; margin-left: .5rem; }
+.nav-phone[open] summary::after { content: "\25B4"; }
+
 @media (max-width: 760px) {
   body { font-size: 1.2rem; }
-  .hero { padding-top: 2rem; }
-  .hero-inner, .lines, .split, .grid, .grid.three, .levels { grid-template-columns: 1fr; }
-  .hero-art { max-width: 260px; }
-  .nav a { padding: .5rem .7rem; }
+  .header-inner { flex-wrap: nowrap; padding-top: .6rem; padding-bottom: .6rem; }
+  .brand { font-size: 1.35rem; }
+  .brand img { width: 48px; height: 36px; }
+  .nav-wide { display: none; }
+  .nav-phone { display: block; }
+  .nav-phone[open] nav { position: absolute; left: 0; right: 0; margin-top: .6rem; background: var(--card); border-bottom: 1px solid var(--rule); box-shadow: 0 12px 24px -16px rgba(43,35,29,.5); z-index: 5; }
+  .nav-phone .nav { flex-direction: column; gap: 0; padding: .25rem 1.25rem .75rem; }
+  .nav-phone .nav a { font-size: 1.25rem; padding: .85rem .25rem; border-radius: 0; border-bottom: 1px solid var(--rule); min-height: 56px; }
+  .nav-phone .nav li:last-child a { border-bottom: 0; }
+  .site-header { position: relative; }
+  .hero { padding: 1.75rem 0 1.5rem; }
+  .hero-inner, .lines, .split, .grid, .grid.three, .levels { grid-template-columns: 1fr; gap: 1.25rem; }
+  .hero-art { display: none; }
+  .actions { flex-direction: column; }
+  .actions .button, .split .button, .bonus .button { display: block; text-align: center; }
+  .lines { padding-bottom: 2rem; }
+  .card { padding: 1.25rem; }
+  .split { gap: 1rem; padding-bottom: 2.5rem; }
+  .steps li { padding-left: 3.4rem; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
