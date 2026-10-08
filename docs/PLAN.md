@@ -19,6 +19,7 @@ Top bar: Coloring Stories (Dreams) · Children's Readers (Lane) · For Facilitie
 - GitHub Pages builds the repo with Jekyll; no build tools for Tracy to run.
 - Shared layout and one stylesheet; each page is a short file of words.
 - Bonus pages share one template. Each has a `form_url` to fill in when the Google Form is ready; until then it shows a friendly "coming soon" note.
+- The full-detail adult edition uses `/dreams/halloween/classic/bonus/` (short link `/halloween-classic/`). "Classic" appears only in the address, never as a book name.
 - Short links (`/halloween-e1/` etc.) forward to the stable bonus URLs, for printing under the QR code.
 - Nothing paid or private is ever committed.
 

@@ -16,10 +16,11 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 | `/` | Home |
 | `/dreams/` | Maplewing Dreams (coloring stories) |
 | `/dreams/halloween/` | Halloween collection |
+| `/dreams/halloween/classic/bonus/` | Printable pages, Halloween full-detail edition ("classic" is URL-only, never a book name) |
 | `/dreams/halloween/e1/bonus/` | Printable pages, Halloween Easy |
 | `/dreams/halloween/e2/bonus/` | Printable pages, Halloween Easier |
 | `/dreams/halloween/e3/bonus/` | Printable pages, Halloween Easiest |
-| `/halloween-e1/`, `/halloween-e2/`, `/halloween-e3/` | Short links that forward to the bonus pages (easy to type from a book) |
+| `/halloween-classic/`, `/halloween-e1/`, `/halloween-e2/`, `/halloween-e3/` | Short links that forward to the bonus pages (easy to type from a book) |
 | `/lane/` | Maplewing Lane (coming soon) |
 | `/facilities/` | Facility licensing |
 | `/bonuses/` | Find your book's printable pages |
