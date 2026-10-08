@@ -5,15 +5,22 @@
       <img src="{{ '/assets/img/samara.svg' | relative_url }}" alt="" width="64" height="48">
       <span>Maplewing Press</span>
     </a>
-    <nav aria-label="Main">
-      <ul class="nav">
+    {% capture nav_links %}
         {% assign s = page.section %}
         <li><a href="{{ '/dreams/' | relative_url }}"{% if s == 'dreams' %} aria-current="page"{% endif %}>Coloring Stories</a></li>
         <li><a href="{{ '/lane/' | relative_url }}"{% if s == 'lane' %} aria-current="page"{% endif %}>Children's Readers</a></li>
         <li><a href="{{ '/facilities/' | relative_url }}"{% if s == 'facilities' %} aria-current="page"{% endif %}>For Facilities</a></li>
         <li><a href="{{ '/bonuses/' | relative_url }}"{% if s == 'bonuses' %} aria-current="page"{% endif %}>Book Bonuses</a></li>
         <li><a href="{{ '/about/' | relative_url }}"{% if s == 'about' %} aria-current="page"{% endif %}>About</a></li>
-      </ul>
+    {% endcapture %}
+    <nav class="nav-wide" aria-label="Main">
+      <ul class="nav">{{ nav_links }}</ul>
     </nav>
+    <details class="nav-phone">
+      <summary>Menu</summary>
+      <nav aria-label="Main">
+        <ul class="nav">{{ nav_links }}</ul>
+      </nav>
+    </details>
   </div>
 </header>
