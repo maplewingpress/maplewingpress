@@ -1,0 +1,25 @@
+{% comment %}
+  Sample pages laid out like sheets of paper on a table.
+  List them in the page's front matter under `samples:` (level, image, alt).
+  A sample with no image shows a blank sheet marked "coming soon".
+{% endcomment %}
+{% if page.samples %}
+<section class="strewn" aria-labelledby="samples-h">
+  <h2 id="samples-h">{{ page.samples_heading | default: "Take a look inside" }}</h2>
+  <p class="strewn-intro">The same pages in each level, from full detail to bold and simple. Tap a page to see it full size.</p>
+  <ul class="sheets">
+    {% for s in page.samples %}
+    <li class="sheet">
+      <p class="sheet-label">{{ s.level }}</p>
+      {% if s.image %}
+      <a class="sheet-paper" href="{{ s.image | relative_url }}">
+        <img src="{{ s.image | relative_url }}" alt="{{ s.alt }}" width="900" height="1174" loading="lazy">
+      </a>
+      {% else %}
+      <div class="sheet-paper sheet-blank"><span>{{ s.level }} sample page<br>coming soon</span></div>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
