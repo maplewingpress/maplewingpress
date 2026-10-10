@@ -22,6 +22,7 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 | `/dreams/halloween/classic/print/` | Printable pages, Halloween full-detail edition (shelved; "classic" is URL-only, never a book name) |
 | `/halloween-e1/`, `/halloween-e2/`, `/halloween-e3/`, `/halloween-classic/` | Short links that forward to the print pages (easy to type from a book) |
 | `/print/` | Find your book's printable pages |
+| `/dreams/halloween/bonus/` | Mailing-list bonus: extra Halloween pages in all three levels, not in the book (no level in the address) |
 | `/facilities/` | Facility licensing |
 | `/about/`, `/contact/` | About; Contact and policies |
 
