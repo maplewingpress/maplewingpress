@@ -170,3 +170,7 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Questions */
+.faq dt { font-weight: 700; margin-top: 1.25rem; }
+.faq dd { margin: .25rem 0 0; }
