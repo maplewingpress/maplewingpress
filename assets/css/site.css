@@ -102,7 +102,7 @@ a:hover { color: var(--burgundy-dark); text-decoration-thickness: .14em; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .grid.three { grid-template-columns: repeat(3, 1fr); }
 .book-art { aspect-ratio: 8.5 / 11; background: var(--paper); border: 1px dashed var(--rule); border-radius: 6px; display: grid; place-items: center; color: var(--muted); margin-bottom: 1rem; font-size: 1rem; }
-.book.muted { opacity: .8; }
+.book.muted, .level.muted { opacity: .8; }
 .link-list { list-style: none; padding: 0; }
 .link-list li { padding: .6rem 0; border-bottom: 1px solid var(--rule); }
 
@@ -155,7 +155,7 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
   .hero-inner, .lines, .split, .grid, .grid.three, .levels { grid-template-columns: 1fr; gap: 1.25rem; }
   .hero-art { display: none; }
   .actions { flex-direction: column; }
-  .actions .button, .split .button, .bonus .button { display: block; text-align: center; }
+  .actions .button, .split .button, .print-page .button { display: block; text-align: center; }
   .lines { padding-bottom: 2rem; }
   .card { padding: 1.25rem; }
   .split { gap: 1rem; padding-bottom: 2.5rem; }
