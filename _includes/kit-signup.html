@@ -1,8 +1,10 @@
 {% assign kit_url = page.kit_form_url | default: site.kit_form_url %}
 {% if kit_url and kit_url != "" %}
 <aside class="card signup" aria-labelledby="signup-h">
-  <h2 id="signup-h">Get bonus pages by email</h2>
-  <p>Join the Maplewing mailing list and we will send you extra Halloween pages in all three levels, pages that are not in the book. You never need to sign up to get your book's printable pages.</p>
-  <a class="button button-quiet" href="{{ kit_url }}">Join the mailing list</a>
+  <h2 id="signup-h">Want a few more pages?</h2>
+  <p>Join our mailing list and get three extra bonus pages that aren't in the book, in all three levels.</p>
+  <p>We keep it light. Expect a welcome email, one follow-up, then about one email a month with a new coloring page and a note when the next story comes out.</p>
+  <a class="button button-quiet" href="{{ kit_url }}">Send me the bonus pages</a>
+  <p class="small">Your bonus pages arrive in your welcome email. You never need to sign up to get your book's printable pages.</p>
 </aside>
 {% endif %}

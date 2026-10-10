@@ -174,3 +174,12 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 /* Questions */
 .faq dt { font-weight: 700; margin-top: 1.25rem; }
 .faq dd { margin: .25rem 0 0; }
+
+/* Facility license price box */
+.price-box { margin: 2rem 0; }
+.price-box h2 { margin-top: 0; }
+.price { font-family: var(--display); color: var(--burgundy); font-size: 2rem; margin: .2em 0 .4em; }
+.price-box ul { margin: 1rem 0 1.5rem; }
+.notice-inline { border-left: 6px solid var(--gold); padding-left: 1rem; }
+.faq dd .button { display: inline-block; margin: .75rem 0 .25rem; }
+.faq dd .small { display: block; }
