@@ -1,16 +1,77 @@
 ---
 layout: page
 section: facilities
-title: For facilities
+title: Print every level for everyone at your location
 eyebrow: Memory care, assisted living, adult family homes and activity teams
-description: "Facility licenses for Maplewing Dreams coloring books: print every level for residents living with dementia or low vision, at one location."
+description: A simple, one-time facility license for Maplewing Dreams coloring books. One license per book lets your team print all three levels for everyone at your location.
+# Links to fill in later. While a link is blank, the page falls back to email.
+# license_url: the checkout link (Payhip). Leave blank until licensing opens.
+license_url: ""
+# open_notify_url: Kit form for "Tell me when it opens".
+open_notify_url: ""
+# collection_notify_url: Kit form for "Tell me about the collection license" (its own tag, not the newsletter).
+collection_notify_url: ""
 ---
-<p class="lead">One story, three levels, and every resident can join in. A facility license lets your team print Easy, Easier and Easiest pages for everyone at your location.</p>
-<h2>What a facility license includes</h2>
-<ul>
-  <li>All three levels of a book (Easy, Easier and Easiest) plus the printable pages that come with them.</li>
-  <li>Printing for residents at one location.</li>
-  <li>Small facility (5 to 20 licensed beds) and large facility (21 beds or more) options.</li>
-</ul>
+<p class="lead">One story, three levels, and every resident can join in. A facility license lets your team print Easy, Easier and Easiest pages for everyone at your location, as often as you need.</p>
+
+<section class="card price-box" aria-labelledby="price-h">
+  <h2 id="price-h">One price. No counting.</h2>
+  <p class="price">$35 per book, one time</p>
+  <p>Already have the book? Use the code on your book's printable pages and pay $29.</p>
+  <p class="small">For one location. All three levels, about 150 pages.</p>
+  <ul>
+    <li>Print as many copies as you like, for as long as you like</li>
+    <li>All three levels, so everyone can color the same story</li>
+    <li>No resident counts, no renewals, no subscription</li>
+    <li>A license certificate and receipt for your records</li>
+    <li>A heads-up when the next book is ready</li>
+  </ul>
+  {% if page.license_url != "" %}
+  <p><a class="button" href="{{ page.license_url }}">Get a facility license</a></p>
+  {% else %}
+  <div class="notice-inline">
+    <p>Facility licenses open when all three Halloween levels are ready. Leave your email and we'll tell you the day they open.</p>
+    {% if page.open_notify_url != "" %}
+    <p><a class="button" href="{{ page.open_notify_url }}">Tell me when it opens</a></p>
+    {% else %}
+    <p><a class="button" href="mailto:{{ site.facilities_email }}?subject=Tell%20me%20when%20facility%20licenses%20open">Tell me when it opens</a></p>
+    {% endif %}
+    <p class="small">One email when licensing opens. That's it.</p>
+  </div>
+  {% endif %}
+</section>
+
 <p>Created by a registered nurse who ran an adult family home for 18 years, with care settings in mind.</p>
-<p class="card notice">Licenses are being finalized. To hear first when they open, write to <a href="mailto:{{ site.facilities_email }}">{{ site.facilities_email }}</a>.</p>
+
+<h2>How it works</h2>
+<ol class="steps">
+  <li>Choose your book and buy the license with your facility name and email.</li>
+  <li>Download the printable pages for all three levels.</li>
+  <li>Print what you need, whenever you need it.</li>
+</ol>
+
+<h2>Questions</h2>
+<dl class="faq">
+  <dt>What counts as one location?</dt>
+  <dd>One building or home at one street address. An adult family home counts as one location.</dd>
+  <dt>We have more than one location.</dt>
+  <dd>Email <a href="mailto:{{ site.facilities_email }}">{{ site.facilities_email }}</a> and we'll send you a simple group price.</dd>
+  <dt>Can families take pages home?</dt>
+  <dd>Pages are for residents, clients and activities at your location. Families who'd like their own copy can buy the book.</dd>
+  <dt>Does the license include future books?</dt>
+  <dd>For now, each license covers one book. As our collection of coloring books for older adults grows, we plan to offer a collection license that covers them all. Want to hear when it's ready?
+    {% if page.collection_notify_url != "" %}
+    <a class="button button-quiet" href="{{ page.collection_notify_url }}">Tell me about the collection license</a>
+    {% else %}
+    <a class="button button-quiet" href="mailto:{{ site.facilities_email }}?subject=Tell%20me%20about%20the%20collection%20license">Tell me about the collection license</a>
+    {% endif %}
+    <span class="small">One email when it's ready. That's it.</span></dd>
+  <dt>Do I need a license if I bought the book?</dt>
+  <dd>A book is for personal or family use. To print pages for a group or a care setting, choose a facility license.</dd>
+  <dt>Why is it less if we own the book?</dt>
+  <dd>You've already bought the story once, so we take $6 off. Find the code on your book's printable pages.</dd>
+  <dt>Why do you need our email?</dt>
+  <dd>It's where we send your license certificate and download link, so you can come back and print again anytime. We'll also send license holders a short note when a new book or the collection license is ready, never the monthly newsletter unless you join it. You can unsubscribe anytime.</dd>
+  <dt>Can we get an invoice or W-9?</dt>
+  <dd>Yes. Email <a href="mailto:{{ site.facilities_email }}">{{ site.facilities_email }}</a>.</dd>
+</dl>
