@@ -23,7 +23,7 @@ layout: default
   <p class="card notice"><strong>Coming soon.</strong> These pages are being finished. Please check back, or write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> and we will send them to you.</p>
   {% endif %}
 
-  <p class="small">These pages are for one household or private caregiving for up to four people. Caring for more people in a facility? See <a href="{{ '/facilities/' | relative_url }}">facility licenses</a>. Because you own the book, you pay $29 instead of $35{% if site.facility_code and site.facility_code != "" %} with the code <strong class="mono">{{ site.facility_code }}</strong>{% endif %}.</p>
+  <p class="small">These pages are for one household or private caregiving for up to four people. Caring for more people in a facility? See <a href="{{ '/facilities/' | relative_url }}">facility licenses</a>. Because you own this book, a facility license is $29 instead of $35{% if site.facility_code and site.facility_code != "" %}. Use the code <strong class="mono">{{ site.facility_code }}</strong> at checkout{% endif %}.</p>
 
   {% include kit-signup.html %}
 
