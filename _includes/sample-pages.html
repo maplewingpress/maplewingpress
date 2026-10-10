@@ -3,7 +3,8 @@
   List them in the page's front matter under `samples:` (level, image, alt).
   A sample with no image shows a blank sheet marked "coming soon".
 {% endcomment %}
-{% if page.samples %}
+{% assign samples_with_art = page.samples | where_exp: "s", "s.image" %}
+{% if samples_with_art.size > 0 %}
 <section class="strewn" aria-labelledby="samples-h">
   <h2 id="samples-h">{{ page.samples_heading | default: "Take a look inside" }}</h2>
   <p class="strewn-intro">The same pages in each level, from full detail to bold and simple. Tap a page to see it full size.</p>
