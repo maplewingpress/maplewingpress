@@ -155,7 +155,7 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
   .hero-inner, .lines, .split, .grid, .grid.three, .levels { grid-template-columns: 1fr; gap: 1.25rem; }
   .hero-art { display: none; }
   .actions { flex-direction: column; }
-  .actions .button, .split .button, .bonus .button { display: block; text-align: center; }
+  .actions .button, .split .button, .print-page .button { display: block; text-align: center; }
   .lines { padding-bottom: 2rem; }
   .card { padding: 1.25rem; }
   .split { gap: 1rem; padding-bottom: 2.5rem; }
