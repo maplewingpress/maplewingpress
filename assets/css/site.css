@@ -183,3 +183,15 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 .notice-inline { border-left: 6px solid var(--gold); padding-left: 1rem; }
 .faq dd .button { display: inline-block; margin: .75rem 0 .25rem; }
 .faq dd .small { display: block; }
+
+/* Book covers, shown like a real coloring book: spine shading on the left, soft shadow */
+.book-cover { position: relative; display: block; aspect-ratio: 8.5 / 11; border-radius: 2px 6px 6px 2px; overflow: hidden; margin-bottom: 1rem; box-shadow: 0 1px 2px rgba(42,32,34,.2), 0 16px 30px -14px rgba(42,32,34,.55); }
+.book-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.book-cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,.28) 0, rgba(255,255,255,.18) 1.2%, rgba(0,0,0,.08) 2.6%, rgba(0,0,0,0) 5%); }
+.hero-cover { display: block; max-width: 360px; width: 100%; justify-self: center; transform: rotate(2deg); }
+.hero-cover .book-cover { margin: 0; }
+.level .book-cover { max-width: 240px; }
+@media (max-width: 760px) {
+  .hero-cover { max-width: 240px; transform: rotate(1.5deg); margin-top: .5rem; }
+  .level .book-cover { max-width: 200px; }
+}
