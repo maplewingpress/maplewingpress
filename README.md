@@ -17,6 +17,7 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 | `/dreams/` | Maplewing Dreams (coloring stories) |
 | `/dreams/coloring-together/` | Tips for coloring together (families and care teams) |
 | `/dreams/printing-tips/` | Printing and coloring tips (printers, paper, dry media) |
+| `/faq/` | Questions and answers (books, printable pages, mailing list, facilities) |
 | `/dreams/halloween/` | Halloween collection |
 | `/dreams/halloween/e2/print/` | Printable pages, Halloween Easier |
 | `/dreams/halloween/e3/print/` | Printable pages, Halloween Easiest |
