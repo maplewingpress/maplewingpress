@@ -13,7 +13,7 @@
     <li class="sheet">
       <p class="sheet-label">{{ s.level }}</p>
       {% if s.image %}
-      <a class="sheet-paper" href="{{ s.image | relative_url }}">
+      <a class="sheet-paper zoom" href="{{ s.image | relative_url }}" data-caption="{{ s.level }} level sample page">
         <img src="{{ s.image | relative_url }}" alt="{{ s.alt }}" width="900" height="1174" loading="lazy">
       </a>
       {% else %}
