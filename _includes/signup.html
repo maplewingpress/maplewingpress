@@ -1,0 +1,9 @@
+{% assign signup_url = page.signup_form_url | default: site.signup_form_url %}
+{% if signup_url and signup_url != "" %}
+<aside class="card signup" aria-labelledby="signup-h">
+  <h2 id="signup-h">Want a few more pages?</h2>
+  <p>Join our mailing list and get three extra bonus pages that aren't in the book, in all three levels.</p>
+  <a class="button button-quiet" href="{{ signup_url }}">Send me the bonus pages</a>
+  <p class="small">Your bonus pages arrive in your welcome email. About one email a month after that. You never need to sign up to get your book's printable pages.</p>
+</aside>
+{% endif %}

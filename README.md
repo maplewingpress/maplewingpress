@@ -7,7 +7,7 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 - GitHub Pages builds this folder with Jekyll automatically. There is nothing to install and no build step.
 - Every page shares one look from `_layouts/default.html` (header, nav, footer) and one stylesheet, `assets/css/site.css`.
 - Colors and fonts live at the top of `site.css` under `:root`. Change them there and the whole site follows.
-- Site-wide settings (emails, the optional Kit form link) are in `_config.yml`.
+- Site-wide settings (emails, the optional MailerLite form link) are in `_config.yml`.
 
 ## Page map (stable URLs; QR codes depend on these, so never rename them)
 
@@ -34,7 +34,7 @@ Older addresses still forward to the pages above, so nothing printed breaks: `/d
 ## Common edits
 
 - **Turn on a book's printable pages:** open `dreams/halloween/e2/print/index.html` (or e3, e1) and paste the Google Form link into `form_url: ""`.
-- **Turn on the mailing list box:** paste the Kit form link into `kit_form_url` in `_config.yml`.
+- **Mailing list (MailerLite):** each printable-pages page has its own form link in `signup_form_url`. The facilities page uses `open_notify_url` and `collection_notify_url`. For a box on the home page, paste a general form link into `signup_form_url` in `_config.yml`. A blank link hides the box.
 - **Add a new book:** copy the `dreams/halloween/` folder, rename it, and change the words.
 
 ## Rules for this repository

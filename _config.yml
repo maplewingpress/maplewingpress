@@ -7,8 +7,9 @@ baseurl: ""
 contact_email: hello@maplewingpress.com
 facilities_email: facilities@maplewingpress.com
 support_email: support@maplewingpress.com
-# Optional email list (Kit). Leave blank until the Kit form exists; the signup box hides itself.
-kit_form_url: ""
+# Optional general mailing-list form (MailerLite), used on the home page. Leave blank until it exists; the signup box hides itself.
+# Each printable-pages page has its own signup_form_url, which wins over this one.
+signup_form_url: ""
 # Book-owner discount code for facility licenses ($6 off), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
 exclude:
