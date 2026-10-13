@@ -1,0 +1,29 @@
+{% comment %}
+  General mailing-list invitation (MailerLite form in site.signup_form_url).
+  Shows as a band above the footer, and as a small box that slides in from the side
+  once a visitor has read part of the page. Not shown on the printable-pages pages
+  (they have their own book signup box) or on pages that set hide_general_signup: true.
+  Hidden everywhere while site.signup_form_url is blank.
+{% endcomment %}
+{% if site.signup_form_url and site.signup_form_url != "" %}{% unless page.layout == "print" or page.hide_general_signup %}
+<section class="signup-band" aria-labelledby="join-h">
+  <div class="wrap signup-band-inner">
+    <div>
+      <h2 id="join-h">Join the Maplewing mailing list</h2>
+      <p>A new coloring page each month, plus three bonus pages for your book.</p>
+    </div>
+    <div>
+      <a class="button" href="{{ site.signup_form_url }}">Join the list</a>
+      <p class="small">A welcome email, one follow-up, then about one email a month.</p>
+    </div>
+  </div>
+</section>
+<aside class="signup-slide" id="signup-slide" aria-labelledby="slide-h" hidden>
+  <button type="button" class="signup-slide-close" aria-label="Close">Close ✕</button>
+  <h2 id="slide-h">Join the Maplewing mailing list</h2>
+  <p>A new coloring page each month, plus three bonus pages for your book.</p>
+  <a class="button" href="{{ site.signup_form_url }}">Join the list</a>
+  <p class="small">A welcome email, one follow-up, then about one email a month.</p>
+</aside>
+<script src="{{ '/assets/js/signup-slide.js' | relative_url }}" defer></script>
+{% endunless %}{% endif %}

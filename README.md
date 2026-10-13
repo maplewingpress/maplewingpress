@@ -34,7 +34,7 @@ Older addresses still forward to the pages above, so nothing printed breaks: `/d
 ## Common edits
 
 - **Turn on a book's printable pages:** open `dreams/halloween/e2/print/index.html` (or e3, e1) and paste the Google Form link into `form_url: ""`.
-- **Mailing list (MailerLite):** each printable-pages page has its own form link in `signup_form_url`. The facilities page uses `open_notify_url` and `collection_notify_url`. For a box on the home page, paste a general form link into `signup_form_url` in `_config.yml`. A blank link hides the box.
+- **Mailing list (MailerLite):** each printable-pages page has its own form link in `signup_form_url`. The facilities page uses `open_notify_url` and `collection_notify_url`. For the general invitation on every other page (a band above the footer and a box that slides in from the side), paste a general form link into `signup_form_url` in `_config.yml`. A blank link hides it.
 - **Add a new book:** copy the `dreams/halloween/` folder, rename it, and change the words.
 
 ## Rules for this repository
