@@ -9,7 +9,7 @@ facilities_email: facilities@maplewingpress.com
 support_email: support@maplewingpress.com
 # General mailing-list form (MailerLite): the band above the footer and the slide-in box on every page except the printable-pages pages. Leave blank until it exists; the signup box hides itself.
 # Each printable-pages page has its own signup_form_url, which wins over this one.
-signup_form_url: ""
+signup_form_url: "https://preview.mailerlite.io/forms/2702036/201227031161078874/share"
 # Book-owner discount code for facility licenses ($6 off), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
 exclude:
