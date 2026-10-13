@@ -9,7 +9,7 @@ facilities_email: facilities@maplewingpress.com
 support_email: support@maplewingpress.com
 # Optional email list (Kit). Leave blank until the Kit form exists; the signup box hides itself.
 kit_form_url: ""
-# Book-owner discount code for facility licenses ($6 off), shown on each printable-pages page. Leave blank until it exists in Payhip.
+# Book-owner discount code for facility licenses ($8 off: $27 instead of $35), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
 exclude:
   - README.md
