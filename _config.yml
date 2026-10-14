@@ -10,8 +10,12 @@ support_email: support@maplewingpress.com
 # General mailing-list form (MailerLite): the band above the footer and the slide-in box on every page except the printable-pages pages. Leave blank until it exists; the signup box hides itself.
 # Each printable-pages page has its own signup_form_url, which wins over this one.
 signup_form_url: "https://preview.mailerlite.io/forms/2702036/201227031161078874/share"
-# Book-owner discount code for facility licenses ($6 off), shown on each printable-pages page. Leave blank until it exists in Payhip.
+# Book-owner discount code for facility licenses ($8 off: $37 instead of $45), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
+# Family Set (all three levels as printable downloads, one household): $24, or $15 for book owners.
+# family_set_url = the Payhip checkout link; family_code = the $9-off book-owner code. Leave blank until they exist; the button then says "coming soon".
+family_set_url: ""
+family_code: ""
 exclude:
   - README.md
   - docs/
