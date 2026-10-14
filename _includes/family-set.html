@@ -1,0 +1,28 @@
+{%- comment -%} Family Set offer. Pass owner=true on printable-pages pages to show the book-owner code. Prices come from Tracy's Oct 13 plan; copy from the Copywriter (family-set-copy.md). {%- endcomment -%}
+<section class="card price-box family-set" aria-labelledby="family-set-title">
+  <h2 id="family-set-title">Family Set</h2>
+  {% if include.owner %}
+  <p>Want all three levels? Book owners can get the Family Set for $15.</p>
+  {% else %}
+  <p>Coloring with someone who likes a different level? With the Family Set, everyone at the table can color the same pictures. Pick Easy, Easier or Easiest for each person, every time you print.</p>
+  {% endif %}
+  <p class="small">All three levels of <em>Halloween Coloring Story</em>, ready to print at home.</p>
+  <ul>
+    <li>All 51 pages in Easy, Easier and Easiest</li>
+    <li>Print as many copies as you like, for as long as you like</li>
+    <li>Instant download</li>
+    <li>For your household, including a loved one you care for at home</li>
+  </ul>
+  <p class="price">$24, one time</p>
+  {% if include.owner %}
+  <p><strong>Because you own this book, you pay $15.</strong>{% if site.family_code and site.family_code != "" %} Use the code <strong class="mono">{{ site.family_code }}</strong> at checkout.{% endif %}</p>
+  {% else %}
+  <p>Already have the book? Use the code on your book's printable pages and pay $15.</p>
+  {% endif %}
+  {% if site.family_set_url and site.family_set_url != "" %}
+  <p><a class="button" href="{{ site.family_set_url }}">Get the Family Set</a></p>
+  {% else %}
+  <p class="small"><strong>Coming soon.</strong> Write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> if you'd like to hear when it's ready.</p>
+  {% endif %}
+  <p class="small">For groups and care settings, choose a <a href="{{ '/facilities/' | relative_url }}">facility license</a>. It covers everyone at one location.</p>
+</section>
