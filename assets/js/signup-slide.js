@@ -1,6 +1,6 @@
 // Gentle mailing-list box that slides in from the side once a visitor has
 // read part of the page. Shown at most once every 30 days, and never again
-// after someone closes it or taps "Join the list".
+// after someone closes it or joins the list.
 (function () {
   var box = document.getElementById('signup-slide');
   if (!box) return;
@@ -28,6 +28,6 @@
   var timer = setTimeout(show, 30000);
   window.addEventListener('scroll', onScroll, { passive: true });
   box.querySelector('.signup-slide-close').addEventListener('click', function () { hide(); set(Date.now()); });
-  box.querySelector('a.button').addEventListener('click', function () { set(-1); });
+  box.addEventListener('ml-joined', function () { set(-1); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !box.hidden) hide(); });
 })();

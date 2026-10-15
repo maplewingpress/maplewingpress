@@ -7,9 +7,11 @@ baseurl: ""
 contact_email: hello@maplewingpress.com
 facilities_email: facilities@maplewingpress.com
 support_email: support@maplewingpress.com
-# General mailing-list form (MailerLite): the band above the footer and the slide-in box on every page except the printable-pages pages. Leave blank until it exists; the signup box hides itself.
-# Each printable-pages page has its own signup_form_url, which wins over this one.
-signup_form_url: "https://preview.mailerlite.io/forms/2702036/201227031161078874/share"
+# MailerLite account number (the signup forms post straight to it).
+mailerlite_account: "2702036"
+# General mailing-list form id (MailerLite "Dreams - Mailing list"): the band above the footer and the slide-in box on every page except the printable-pages pages. Leave blank to hide them.
+# Each printable-pages page has its own signup_form_id, for its level group.
+signup_form_id: "201227031161078874"
 # Book-owner discount code for facility licenses ($8 off: $37 instead of $45), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
 # Family Set (all three levels as printable downloads, one household): $24, or $15 for book owners.
