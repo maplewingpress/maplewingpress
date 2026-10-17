@@ -1,0 +1,26 @@
+{%- comment -%}
+  Site-styled MailerLite signup form. It posts straight to MailerLite's subscribe
+  endpoint (no MailerLite form design needed). assets/js/ml-form.js sends it in the
+  background and shows the success message in place; without JavaScript the browser
+  posts it normally.
+  Parameters: form_id (MailerLite form id, required), uid (unique on the page),
+  button, success, button_class (optional), company (true adds "Facility name").
+{%- endcomment -%}
+<form class="ml-form" action="https://assets.mailerlite.com/jsonp/{{ site.mailerlite_account }}/forms/{{ include.form_id }}/subscribe" method="post" target="_blank" data-success="{{ include.success | escape }}" data-error="Sorry, that didn't go through. Please check your email address and try again, or write to {{ site.contact_email }}.">
+  <div class="ml-fields">
+    <p class="ml-field">
+      <label for="{{ include.uid }}-email">Your email address</label>
+      <input id="{{ include.uid }}-email" type="email" name="fields[email]" autocomplete="email" required>
+    </p>
+    {% if include.company %}
+    <p class="ml-field">
+      <label for="{{ include.uid }}-company">Facility name <span class="ml-optional">(optional)</span></label>
+      <input id="{{ include.uid }}-company" type="text" name="fields[company]" autocomplete="organization">
+    </p>
+    {% endif %}
+  </div>
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+  <button type="submit" class="button {{ include.button_class }}">{{ include.button }}</button>
+  <p class="ml-message" role="status" aria-live="polite" hidden></p>
+</form>
