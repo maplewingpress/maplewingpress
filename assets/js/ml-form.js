@@ -10,6 +10,7 @@
     var oneEmailAction = form.getAttribute('action');
     if (listBox) listBox.addEventListener('change', function () {
       form.setAttribute('action', listBox.checked ? form.dataset.listAction : oneEmailAction);
+      form.querySelectorAll('.ml-one-only').forEach(function (f) { f.disabled = listBox.checked; });
     });
     function say(text, ok) {
       msg.textContent = text;

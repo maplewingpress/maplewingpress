@@ -14,7 +14,7 @@ mailerlite_account: "2702036"
 signup_form_id: "201227031161078874"
 # thankyou_form_id: MailerLite form for print-page visitors who want the one thank-you email
 # (bonus pages) but did NOT tick the mailing-list box. Blank hides the box until it exists.
-thankyou_form_id: ""
+thankyou_form_id: "201877270636266984"
 # Book-owner discount code for facility licenses ($8 off: $37 instead of $45), shown on each printable-pages page. Leave blank until it exists in Payhip.
 facility_code: ""
 # Family Set (all three levels as printable downloads, one household): $24, or $15 for book owners.

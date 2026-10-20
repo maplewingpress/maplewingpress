@@ -7,7 +7,8 @@
   button, success, button_class (optional), company (true adds "Facility name"),
   email_label (optional), list_form_id + list_label (optional: adds an unchecked
   "add me to the mailing list" box; when ticked the form posts to list_form_id
-  instead of form_id, and shows list_success if given).
+  instead of form_id, and shows list_success if given),
+  book_level (optional: sent as fields[book_level] on the one-email path only).
 {%- endcomment -%}
 {%- capture ml_base %}https://assets.mailerlite.com/jsonp/{{ site.mailerlite_account }}/forms/{% endcapture -%}
 <form class="ml-form" action="{{ ml_base }}{{ include.form_id }}/subscribe" method="post" target="_blank"{% if include.list_form_id %} data-list-action="{{ ml_base }}{{ include.list_form_id }}/subscribe" data-list-success="{{ include.list_success | default: include.success | escape }}"{% endif %} data-success="{{ include.success | escape }}" data-error="Sorry, that didn't go through. Please check your email address and try again, or write to {{ site.contact_email }}.">
@@ -29,6 +30,7 @@
     </p>
     {% endif %}
   </div>
+  {% if include.book_level %}<input type="hidden" name="fields[book_level]" value="{{ include.book_level }}" class="ml-one-only">{% endif %}
   <input type="hidden" name="ml-submit" value="1">
   <input type="hidden" name="anticsrf" value="true">
   <button type="submit" class="button {{ include.button_class }}">{{ include.button }}</button>
