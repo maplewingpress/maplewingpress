@@ -26,7 +26,7 @@
           if (data && data.success) {
             form.querySelector('.ml-fields').hidden = true;
             button.hidden = true;
-            say(form.dataset.success, true);
+            say(listBox && listBox.checked ? form.dataset.listSuccess : form.dataset.success, true);
             msg.setAttribute('tabindex', '-1');
             msg.focus();
             form.dispatchEvent(new CustomEvent('ml-joined', { bubbles: true }));

@@ -4,8 +4,8 @@ thank-you form (site.thankyou_form_id); ticking the box sends it to the page's o
 {% if page.signup_form_id and page.signup_form_id != "" and site.thankyou_form_id and site.thankyou_form_id != "" %}
 <aside class="card signup" aria-labelledby="signup-h">
   <h2 id="signup-h">Want a few more pages?</h2>
-  <p>Leave your email and we'll send a thank-you with three bonus pages that aren't in the book, in all three levels. This is optional.</p>
-  {% include ml-form.html form_id=site.thankyou_form_id list_form_id=page.signup_form_id uid="book" email_label="Email me a thank-you and the bonus pages" list_label="Also add me to the Maplewing Dreams mailing list. Get free bonus pages every month and news of new book releases. Unsubscribe anytime." button="Send me the bonus pages" button_class="button-quiet" success="Almost there! Please check your inbox and tap the button to confirm. Then your bonus pages are on their way." %}
-  <p class="small">You never need to sign up to get your book's printable pages.</p>
+  <p>Leave your email and I'll send you a thank-you note and three bonus pages that aren't in the book, in all three levels.</p>
+  {% include ml-form.html form_id=site.thankyou_form_id list_form_id=page.signup_form_id uid="book" email_label="Email" list_label="Also add me to the Maplewing Dreams mailing list. Get free bonus pages every month and news of new book releases. Unsubscribe anytime." button="Send me the bonus pages" button_class="button-quiet" success="Thank you! Please check your inbox. Your bonus pages are on their way. If you don't see them in a few minutes, peek in your spam or promotions folder." list_success="Almost there! Please check your inbox and tap the button to confirm. Then your bonus pages are on their way." %}
+  <p class="small">If you leave the box empty, you'll get just this one email. You never need to sign up to get your book's printable pages.</p>
 </aside>
 {% endif %}
