@@ -1,9 +1,11 @@
-{%- comment -%} Book signup box on each printable-pages page. Uses the page's own MailerLite form (its level group). Hidden when the page has no signup_form_id. {%- endcomment -%}
-{% if page.signup_form_id and page.signup_form_id != "" %}
+{%- comment -%} Optional email box on each printable-pages page. The email alone goes to the one-email
+thank-you form (site.thankyou_form_id); ticking the box sends it to the page's own level form
+(page.signup_form_id) instead, which joins the mailing list. Hidden until both form ids exist. {%- endcomment -%}
+{% if page.signup_form_id and page.signup_form_id != "" and site.thankyou_form_id and site.thankyou_form_id != "" %}
 <aside class="card signup" aria-labelledby="signup-h">
   <h2 id="signup-h">Want a few more pages?</h2>
-  <p>Join our mailing list and get three extra bonus pages that aren't in the book, in all three levels.</p>
-  {% include ml-form.html form_id=page.signup_form_id uid="book" button="Send me the bonus pages" button_class="button-quiet" success="Almost there! Please check your inbox and tap the button to confirm. Then your bonus pages are on their way." %}
-  <p class="small">Your bonus pages arrive in your welcome email. About one email a month after that. You never need to sign up to get your book's printable pages.</p>
+  <p>Leave your email and we'll send a thank-you with three bonus pages that aren't in the book, in all three levels. This is optional.</p>
+  {% include ml-form.html form_id=site.thankyou_form_id list_form_id=page.signup_form_id uid="book" email_label="Email me a thank-you and the bonus pages" list_label="Also add me to the Maplewing Dreams mailing list for new books and free pages. Unsubscribe anytime." button="Send me the bonus pages" button_class="button-quiet" success="Almost there! Please check your inbox and tap the button to confirm. Then your bonus pages are on their way." %}
+  <p class="small">You never need to sign up to get your book's printable pages.</p>
 </aside>
 {% endif %}
