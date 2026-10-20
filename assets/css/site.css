@@ -261,6 +261,7 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 .ml-form .ml-field { margin: 0 0 .8rem; }
 .ml-field label { display: block; font-weight: 700; font-size: 1.1rem; margin-bottom: .3rem; color: var(--ink); }
 .ml-optional { font-weight: 400; color: var(--muted); }
+.ml-help { display: block; font-size: 1.05rem; color: var(--muted); margin: -.1rem 0 .35rem; }
 .ml-field input { box-sizing: border-box; width: 100%; max-width: 26rem; min-height: 52px; padding: .6rem .85rem; font: 1.15rem var(--body); color: var(--ink); background: #fff; border: 2px solid var(--muted); border-radius: 10px; }
 .ml-field input:focus { outline: 3px solid var(--burgundy); outline-offset: 1px; border-color: var(--burgundy); }
 .ml-form .ml-message { margin: .8rem 0 0; font-size: 1.15rem; font-weight: 700; color: #3E5434; }
