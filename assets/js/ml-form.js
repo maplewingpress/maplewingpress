@@ -5,6 +5,13 @@
   document.querySelectorAll('form.ml-form').forEach(function (form) {
     var msg = form.querySelector('.ml-message');
     var button = form.querySelector('button[type="submit"]');
+    // Optional mailing-list box: ticked posts to the list form, unticked to the one-email form.
+    var listBox = form.querySelector('.ml-list-opt');
+    var oneEmailAction = form.getAttribute('action');
+    if (listBox) listBox.addEventListener('change', function () {
+      form.setAttribute('action', listBox.checked ? form.dataset.listAction : oneEmailAction);
+      form.querySelectorAll('.ml-one-only').forEach(function (f) { f.disabled = listBox.checked; });
+    });
     function say(text, ok) {
       msg.textContent = text;
       msg.hidden = false;
@@ -20,7 +27,7 @@
           if (data && data.success) {
             form.querySelector('.ml-fields').hidden = true;
             button.hidden = true;
-            say(form.dataset.success, true);
+            say(listBox && listBox.checked ? form.dataset.listSuccess : form.dataset.success, true);
             msg.setAttribute('tabindex', '-1');
             msg.focus();
             form.dispatchEvent(new CustomEvent('ml-joined', { bubbles: true }));
