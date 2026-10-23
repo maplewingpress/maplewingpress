@@ -20,7 +20,15 @@
   <p>Already have the book? Use the code on your book's printable pages and pay $15.</p>
   {% endif %}
   {% if site.family_set_url and site.family_set_url != "" %}
+  {% if site.family_set_key and site.family_set_key != "" %}
+  <div class="payhip-wrap">
+    <div class="payhip-embed-page" data-key="{{ site.family_set_key }}"></div>
+    <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+  </div>
+  <p class="small">Trouble seeing the checkout? <a href="{{ site.family_set_url }}">Open the Family Set on Payhip</a>.</p>
+  {% else %}
   <p><a class="button" href="{{ site.family_set_url }}">Get the Family Set</a></p>
+  {% endif %}
   {% else %}
   <p class="small"><strong>Coming soon.</strong> Write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> if you'd like to hear when it's ready.</p>
   {% endif %}
