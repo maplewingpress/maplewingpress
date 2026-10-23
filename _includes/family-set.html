@@ -1,4 +1,4 @@
-{%- comment -%} Family Set offer. Pass owner=true on printable-pages pages to show the book-owner code. Prices come from Tracy's Oct 13 plan; copy from the Copywriter (family-set-copy.md). {%- endcomment -%}
+{%- comment -%} Family Set offer. Pass owner=true on printable-pages pages to show the book-owner wording (the $15 link itself appears only after the order-number step). Prices come from Tracy's Oct 13 plan; copy from the Copywriter (family-set-copy.md). {%- endcomment -%}
 <section class="card price-box family-set" aria-labelledby="family-set-title">
   <h2 id="family-set-title">Family Set</h2>
   {% if include.owner %}
@@ -15,12 +15,21 @@
   </ul>
   <p class="price">$24, one time</p>
   {% if include.owner %}
-  <p><strong>Because you own this book, you pay $15.</strong>{% if site.family_code and site.family_code != "" %} Use the code <strong class="mono">{{ site.family_code }}</strong> at checkout.{% endif %}</p>
+  <p><strong>Because you own this book, you pay $15.</strong> Your book-owner link appears with your download, after you tell us your order number.</p>
   {% else %}
-  <p>Already have the book? Use the code on your book's printable pages and pay $15.</p>
+  <p>Already have the book? Enter your order number on your book's printable pages to get the $15 book-owner price.</p>
   {% endif %}
-  {% if site.family_set_url and site.family_set_url != "" %}
+  {% if include.owner %}
+  {% elsif site.family_set_url and site.family_set_url != "" %}
+  {% if site.family_set_key and site.family_set_key != "" %}
+  <div class="payhip-wrap">
+    <div class="payhip-embed-page" data-key="{{ site.family_set_key }}"></div>
+    <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+  </div>
+  <p class="small">Trouble seeing the checkout? <a href="{{ site.family_set_url }}">Open the Family Set on Payhip</a>.</p>
+  {% else %}
   <p><a class="button" href="{{ site.family_set_url }}">Get the Family Set</a></p>
+  {% endif %}
   {% else %}
   <p class="small"><strong>Coming soon.</strong> Write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> if you'd like to hear when it's ready.</p>
   {% endif %}
