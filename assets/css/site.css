@@ -234,3 +234,6 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 /* Home hero: the three Halloween books fanned out (reuses .book-fan) */
 .hero-fan { display: block; width: 100%; max-width: 440px; justify-self: center; margin: 0; }
 @media (max-width: 700px) { .hero-fan { max-width: 320px; margin-top: .5rem; } }
+
+/* Payhip mini product page on /facilities/ */
+.payhip-wrap { margin: 1.2rem 0 .6rem; max-width: 100%; overflow: hidden; }

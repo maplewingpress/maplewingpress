@@ -7,6 +7,8 @@ description: A simple, one-time facility license for Maplewing Dreams coloring b
 # Links to fill in later. While a link is blank, the page falls back to email.
 # license_url: the checkout link (Payhip). Leave blank until licensing opens.
 license_url: "https://payhip.com/b/gbV9Y"
+# payhip_key: the Payhip product key; when set, the page shows Payhip's mini product page (embed) with the checkout.
+payhip_key: "gbV9Y"
 # open_notify_url: Kit form for "Tell me when it opens".
 open_notify_url: ""
 # collection_notify_url: Kit form for "Tell me about the collection license" (its own tag, not the newsletter).
@@ -28,7 +30,15 @@ collection_notify_url: ""
     <li>A heads-up when the next book is ready</li>
   </ul>
   {% if page.license_url != "" %}
+  {% if page.payhip_key and page.payhip_key != "" %}
+  <div class="payhip-wrap">
+    <div class="payhip-embed-page" data-key="{{ page.payhip_key }}"></div>
+    <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+  </div>
+  <p class="small">Trouble seeing the checkout? <a href="{{ page.license_url }}">Open the facility license on Payhip</a>.</p>
+  {% else %}
   <p><a class="button" href="{{ page.license_url }}">Get a facility license</a></p>
+  {% endif %}
   {% else %}
   <div class="notice-inline">
     <p>Facility licenses open when all three Halloween levels are ready. Leave your email and we'll tell you the day they open.</p>
