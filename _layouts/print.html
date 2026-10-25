@@ -3,9 +3,47 @@ layout: default
 ---
 <div class="wrap narrow page print-page">
   <p class="eyebrow">For owners of {{ page.book }}</p>
-  <h1>Your printable pages</h1>
-  <p class="lead">Thank you for coloring with us! Your <strong>{{ page.level_name }}</strong> book includes printable copies of all {{ page.page_count }} pages, so you can print a favorite and color it again, as often as you like at home.</p>
+  <h1>Thank you so much for your purchase</h1>
+  <p class="lead">We're so delighted to have you here. Your <strong>{{ page.level_name }}</strong> book includes printable copies of all {{ page.page_count }} pages, so you can print a favorite and color it again, as often as you like at home. First, please take a moment for this short purchase check.</p>
 
+  {% if site.purchase_check_url and site.purchase_check_url != "" and page.level_code %}
+  <form class="purchase-check" action="{{ site.purchase_check_url }}" method="post" novalidate
+    data-level="{{ page.level_code }}"
+    data-family-text="Family Set, all three levels for your household, $15"
+    data-facility-text="Facility license for care settings, $36">
+    <div class="pc-fields">
+      <fieldset class="ml-field pc-source">
+        <legend>Where did you get your book?</legend>
+        <div class="ml-check"><input type="radio" id="pc-amazon" name="source" value="amazon" checked><label for="pc-amazon">Amazon</label></div>
+        <div class="ml-check"><input type="radio" id="pc-store" name="source" value="store"><label for="pc-store">A store</label></div>
+        <div class="ml-check"><input type="radio" id="pc-gift" name="source" value="gift"><label for="pc-gift">It was a gift</label></div>
+      </fieldset>
+
+      <div class="ml-field">
+        <label for="pc-number">Order or receipt number <span class="ml-optional pc-gift-only" hidden>(if you have one)</span></label>
+        <span class="ml-help pc-help" data-amazon="Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567." data-store="Type the number printed on your receipt, or add a photo of the receipt below." data-gift="If the giver included a gift receipt, type its number. If not, you can leave this blank.">Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567.</span>
+        <input type="text" id="pc-number" name="number" autocomplete="off" inputmode="text">
+      </div>
+
+      <div class="ml-field pc-store-only" hidden>
+        <label for="pc-photo">Photo of your receipt <span class="ml-optional">(optional)</span></label>
+        <span class="ml-help">Take a clear picture of the whole receipt. We read the store, date and receipt number from it.</span>
+        <input type="file" id="pc-photo" name="photo" accept="image/*">
+      </div>
+
+      <div class="ml-field pc-store-only" hidden>
+        <label for="pc-store-name">Store name and date <span class="ml-optional">(optional)</span></label>
+        <span class="ml-help">For example: Barnes &amp; Noble, October 20.</span>
+        <input type="text" id="pc-store-name" name="store" autocomplete="off">
+      </div>
+
+      <p><button class="button" type="submit">Check my purchase</button></p>
+    </div>
+    <div class="pc-result" role="status" aria-live="polite" tabindex="-1" hidden></div>
+  </form>
+  <p class="small">You never need to sign up for anything to get your pages. Each order or receipt opens the pages twice, so keep your download somewhere safe.</p>
+  <noscript><p class="card notice">This check needs JavaScript turned on. Or write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> and we will send your pages.</p></noscript>
+  {% else %}
   <ol class="steps">
     <li>
       <h2>Keep your receipt or order number handy</h2>
@@ -14,17 +52,13 @@ layout: default
     </li>
     <li>
       <h2>Open your pages</h2>
-      <p>After you send the short form, the download link appears on the screen. Print on plain or heavier paper, one side only.</p>
+      <p>After the short purchase check, the download link appears on the screen. Print on plain or heavier paper, one side only.</p>
     </li>
   </ol>
-
-  {% if page.form_url and page.form_url != "" %}
-  <p><a class="button" href="{{ page.form_url }}">Get my printable pages</a></p>
-  {% else %}
   <p class="card notice"><strong>Coming soon.</strong> These pages are being finished. Please check back, or write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a> and we will send them to you.</p>
   {% endif %}
 
-  <p class="small">These pages are for one household or private caregiving for up to four people. Caring for more people in a facility? See <a href="{{ '/facilities/' | relative_url }}">facility licenses</a>. Because you own this book, a facility license is $36 instead of $45. Your book-owner link appears with your download, after you tell us your order number.</p>
+  <p class="small">These pages are for one household or private caregiving for up to four people. Caring for more people in a facility? See <a href="{{ '/facilities/' | relative_url }}">facility licenses</a>. Because you own this book, a facility license is $36 instead of $45. Your book-owner link appears with your download, after the purchase check.</p>
 
   {% include family-set.html owner=true %}
 
@@ -34,3 +68,5 @@ layout: default
 
   <p class="small">Need help? Write to <a href="mailto:{{ site.support_email }}">{{ site.support_email }}</a>.</p>
 </div>
+
+<script src="{{ '/assets/js/purchase-check.js' | relative_url }}" defer></script>

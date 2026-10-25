@@ -15,8 +15,12 @@ signup_form_id: "201227031161078874"
 # thankyou_form_id: MailerLite form for print-page visitors who want the one thank-you email
 # (bonus pages) but did NOT tick the mailing-list box. Blank hides the box until it exists.
 thankyou_form_id: "201877270636266984"
-# Book-owner prices (facility $36, Family Set $15) are separate Unlisted Payhip products. Their links are shown
-# only after the order-number step (in each level's download form confirmation), never on the website.
+# purchase_check_url: Tracy's Google Apps Script web app (docs/purchase-check/). The printable-pages pages send it
+# the order number or receipt photo; it logs the purchase in her Google Sheet and answers with the download link.
+# Blank shows "Coming soon" on the printable-pages pages.
+purchase_check_url: ""
+# Book-owner prices (facility $36, Family Set $15) are separate Unlisted Payhip products. Their links are kept in
+# the purchase-check script and shown only after the purchase check, never in this repository.
 # Family Set (all three levels as printable downloads, one household): $24, or $15 for book owners.
 # family_set_url = the public ($24) Payhip checkout link. Leave blank until it exists; the box then says "coming soon".
 family_set_url: "https://payhip.com/b/av4xf"

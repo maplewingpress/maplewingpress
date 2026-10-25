@@ -276,3 +276,17 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 
 /* Payhip mini product pages (facilities page, Family Set box) */
 .payhip-wrap { margin: 1.2rem 0 .6rem; max-width: 100%; overflow: hidden; }
+
+/* Purchase check on the printable-pages pages (assets/js/purchase-check.js) */
+.purchase-check { margin: 1.5rem 0 .8rem; }
+.purchase-check fieldset { border: 0; padding: 0; margin: 0 0 1rem; }
+.purchase-check legend { font-weight: 700; font-size: 1.1rem; margin-bottom: .5rem; color: var(--ink); }
+.purchase-check input[type="file"] { border-style: dashed; padding: .7rem; }
+.purchase-check [hidden] { display: none !important; }
+.pc-result { font-size: 1.15rem; }
+.pc-result:focus { outline: none; }
+.pc-result .pc-ok { font-weight: 700; color: #3E5434; }
+.pc-result.is-error p { font-weight: 700; color: var(--burgundy); }
+.pc-result h2 { font-size: 1.35rem; margin: 1.4rem 0 .4rem; }
+.pc-source .ml-check { align-items: center; margin-bottom: .6rem; }
+.pc-source .ml-check input { margin: 0; }
