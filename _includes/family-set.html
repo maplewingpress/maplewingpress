@@ -1,5 +1,5 @@
 {%- comment -%} Family Set offer. Pass owner=true on printable-pages pages to show the book-owner wording (the $15 link itself appears only after the order-number step). Prices come from Tracy's Oct 13 plan; copy from the Copywriter (family-set-copy.md). {%- endcomment -%}
-<section class="card price-box family-set" aria-labelledby="family-set-title">
+<section class="card price-box family-set" id="{% if include.owner %}family-set-owner{% else %}family-set{% endif %}" aria-labelledby="family-set-title">
   <h2 id="family-set-title">Family Set</h2>
   {% if include.owner %}
   <p>Want all three levels? Book owners can get the Family Set for $15.</p>
