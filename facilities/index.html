@@ -6,7 +6,9 @@ eyebrow: Memory care, assisted living, adult family homes and activity teams
 description: A simple, one-time facility license for Maplewing Dreams coloring books. One license per book lets your team print all three levels for everyone at your location.
 # Links to fill in later. While a link is blank, the page falls back to email.
 # license_url: the checkout link (Payhip). Leave blank until licensing opens.
-license_url: ""
+license_url: "https://payhip.com/b/gbV9Y"
+# payhip_key: the Payhip product key; when set, the page shows Payhip's mini product page (embed) with the checkout.
+payhip_key: "gbV9Y"
 # open_notify_form_id: MailerLite form id for "Tell me when it opens".
 open_notify_form_id: "201175667364070413"
 # collection_notify_form_id: MailerLite form id for "Tell me about the collection license" (its own group, not the newsletter).
@@ -18,7 +20,7 @@ collection_notify_form_id: "201175670262334960"
   <h2 id="price-h">One price. No counting.</h2>
   <p class="price">$45 per book</p>
   <p>One payment covers all three levels of the book (Easy, Easier and Easiest), about 150 pages, for one location.</p>
-  <p><strong>Already own the book?</strong> Use the code on your book's printable pages and pay $37.</p>
+  <p>Already have the book? Enter your order number on your book's printable pages to get the $36 book-owner price.</p>
   <p><strong>More than one location?</strong> Email <a href="mailto:{{ site.facilities_email }}">{{ site.facilities_email }}</a> and we'll work out a fair price.</p>
   <ul>
     <li>Print as many copies as you like, for as long as you like</li>
@@ -28,7 +30,15 @@ collection_notify_form_id: "201175670262334960"
     <li>A heads-up when the next book is ready</li>
   </ul>
   {% if page.license_url != "" %}
+  {% if page.payhip_key and page.payhip_key != "" %}
+  <div class="payhip-wrap">
+    <div class="payhip-embed-page" data-key="{{ page.payhip_key }}"></div>
+    <script type="text/javascript" src="https://payhip.com/embed-page.js?v=24u68985"></script>
+  </div>
+  <p class="small">Trouble seeing the checkout? <a href="{{ page.license_url }}">Open the facility license on Payhip</a>.</p>
+  {% else %}
   <p><a class="button" href="{{ page.license_url }}">Get a facility license</a></p>
+  {% endif %}
   {% else %}
   <div class="notice-inline">
     <p>Facility licenses open when all three Halloween levels are ready. Leave your email and we'll tell you the day they open.</p>
@@ -41,6 +51,8 @@ collection_notify_form_id: "201175670262334960"
   </div>
   {% endif %}
 </section>
+
+<p class="small">Coloring at home with family, not in a care setting? The <a href="{{ '/dreams/halloween/' | relative_url }}#family-set">Family Set</a> has all three levels for your household, $24.</p>
 
 <p>Created by a registered nurse who ran an adult family home for 18 years, with care settings in mind.</p>
 <p>Planning a coloring activity? Read our <a href="{{ '/dreams/coloring-together/' | relative_url }}">tips for coloring together</a>.</p>
@@ -71,7 +83,7 @@ collection_notify_form_id: "201175670262334960"
   <dt>Do I need a license if I bought the book?</dt>
   <dd>A book is for personal or family use. To print pages for a group or a care setting, choose a facility license.</dd>
   <dt>Why is it less if we own the book?</dt>
-  <dd>You've already bought the story once, so we take $8 off. Find the code on your book's printable pages.</dd>
+  <dd>You've already bought the story once, so you pay $36. Enter your order number on your book's printable pages to get the book-owner price.</dd>
   <dt>Why do you need our email?</dt>
   <dd>It's where we send your license certificate and download link, so you can come back and print again anytime. We'll also send license holders a short note when a new book or the collection license is ready, never the monthly newsletter unless you join it. You can unsubscribe anytime.</dd>
   <dt>Can we get an invoice or W-9?</dt>
