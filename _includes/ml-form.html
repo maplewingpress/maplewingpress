@@ -1,0 +1,38 @@
+{%- comment -%}
+  Site-styled MailerLite signup form. It posts straight to MailerLite's subscribe
+  endpoint (no MailerLite form design needed). assets/js/ml-form.js sends it in the
+  background and shows the success message in place; without JavaScript the browser
+  posts it normally.
+  Parameters: form_id (MailerLite form id, required), uid (unique on the page),
+  button, success, button_class (optional), company (true adds "Facility name"),
+  email_label (optional), list_form_id + list_label (optional: adds an unchecked
+  "add me to the mailing list" box; when ticked the form posts to list_form_id
+  instead of form_id, and shows list_success if given),
+  book_level (optional: sent as fields[book_level] on the one-email path only).
+{%- endcomment -%}
+{%- capture ml_base %}https://assets.mailerlite.com/jsonp/{{ site.mailerlite_account }}/forms/{% endcapture -%}
+<form class="ml-form" action="{{ ml_base }}{{ include.form_id }}/subscribe" method="post" target="_blank"{% if include.list_form_id %} data-list-action="{{ ml_base }}{{ include.list_form_id }}/subscribe" data-list-success="{{ include.list_success | default: include.success | escape }}"{% endif %} data-success="{{ include.success | escape }}" data-error="Sorry, that didn't go through. Please check your email address and try again, or write to {{ site.contact_email }}.">
+  <div class="ml-fields">
+    <p class="ml-field">
+      <label for="{{ include.uid }}-email">{{ include.email_label | default: "Your email address" }}</label>
+      <input id="{{ include.uid }}-email" type="email" name="fields[email]" autocomplete="email" required>
+    </p>
+    {% if include.company %}
+    <p class="ml-field">
+      <label for="{{ include.uid }}-company">Facility name <span class="ml-optional">(optional)</span></label>
+      <input id="{{ include.uid }}-company" type="text" name="fields[company]" autocomplete="organization">
+    </p>
+    {% endif %}
+    {% if include.list_form_id %}
+    <p class="ml-check">
+      <input id="{{ include.uid }}-list" type="checkbox" class="ml-list-opt">
+      <label for="{{ include.uid }}-list">{{ include.list_label }}</label>
+    </p>
+    {% endif %}
+  </div>
+  {% if include.book_level %}<input type="hidden" name="fields[book_level]" value="{{ include.book_level }}" class="ml-one-only">{% endif %}
+  <input type="hidden" name="ml-submit" value="1">
+  <input type="hidden" name="anticsrf" value="true">
+  <button type="submit" class="button {{ include.button_class }}">{{ include.button }}</button>
+  <p class="ml-message" role="status" aria-live="polite" hidden></p>
+</form>

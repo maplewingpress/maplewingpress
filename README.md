@@ -7,7 +7,7 @@ The public website for Maplewing Press (maplewingpress.com), built as a plain st
 - GitHub Pages builds this folder with Jekyll automatically. There is nothing to install and no build step.
 - Every page shares one look from `_layouts/default.html` (header, nav, footer) and one stylesheet, `assets/css/site.css`.
 - Colors and fonts live at the top of `site.css` under `:root`. Change them there and the whole site follows.
-- Site-wide settings (emails, the optional Kit form link) are in `_config.yml`.
+- Site-wide settings (emails, the optional MailerLite form link) are in `_config.yml`.
 
 ## Page map (stable URLs; QR codes depend on these, so never rename them)
 
@@ -35,7 +35,7 @@ Older addresses still forward to the pages above, so nothing printed breaks: `/d
 ## Common edits
 
 - **Turn on a book's printable pages:** open `dreams/halloween/e2/print/index.html` (or e3, e1) and paste the Google Form link into `form_url: ""`.
-- **Turn on the mailing list box:** paste the Kit form link into `kit_form_url` in `_config.yml`.
+- **Mailing list (MailerLite):** the signup forms are the site's own forms (`_includes/ml-form.html`), styled like the site, that post straight to MailerLite. No form design is needed in MailerLite. Each printable-pages page has its own form id in `signup_form_id` (its level group). The facilities page uses `open_notify_form_id` and `collection_notify_form_id`. The general invitation on every other page (a band above the footer and a box that slides in from the side) uses `signup_form_id` in `_config.yml`. A blank id hides that form. The account number is `mailerlite_account`.
 - **Add a new book:** copy the `dreams/halloween/` folder, rename it, and change the words.
 
 ## Rules for this repository
