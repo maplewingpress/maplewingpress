@@ -1,0 +1,13 @@
+---
+layout: page
+section: join
+title: Join the Maplewing Dreams mailing list
+description: Get free bonus pages every month and news of new book releases from Maplewing Dreams.
+hide_general_signup: true
+# Stable link used in Maplewing emails ("Join the mailing list"). Keep this URL.
+---
+<p class="lead">Get free bonus pages every month and news of new book releases. Unsubscribe anytime.</p>
+
+{% capture join_ok %}Almost there! Please check your inbox and tap the button to confirm. Then your bonus pages are on their way.{% endcapture %}
+{% include ml-form.html form_id=site.signup_form_id uid="join" button="Join the list" success=join_ok %}
+<p class="small">A welcome email, one follow-up, then about one email a month. You never need to sign up to get your book's printable pages.</p>
