@@ -7,8 +7,14 @@ baseurl: ""
 contact_email: hello@maplewingpress.com
 facilities_email: facilities@maplewingpress.com
 support_email: support@maplewingpress.com
-# Optional email list (Kit). Leave blank until the Kit form exists; the signup box hides itself.
-kit_form_url: ""
+# MailerLite account number (the signup forms post straight to it).
+mailerlite_account: "2702036"
+# General mailing-list form id (MailerLite "Dreams - Mailing list"): the band above the footer and the slide-in box on every page except the printable-pages pages. Leave blank to hide them.
+# Each printable-pages page has its own signup_form_id, for its level group.
+signup_form_id: "201227031161078874"
+# thankyou_form_id: MailerLite form for print-page visitors who want the one thank-you email
+# (bonus pages) but did NOT tick the mailing-list box. Blank hides the box until it exists.
+thankyou_form_id: "201877270636266984"
 # Book-owner prices (facility $36, Family Set $15) are separate Unlisted Payhip products. Their links are shown
 # only after the order-number step (in each level's download form confirmation), never on the website.
 # Family Set (all three levels as printable downloads, one household): $24, or $15 for book owners.

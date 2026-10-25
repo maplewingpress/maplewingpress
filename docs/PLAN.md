@@ -12,7 +12,7 @@ Top bar: Coloring Stories (Dreams) · For Facilities · Book Bonuses · About. M
 3. Maplewing Dreams series card. Maplewing Press itself stays general, since other kinds of books may follow.
 4. "One story, three ways to color": Easy, Easier, Easiest.
 5. Two short paths: facilities, and book owners looking for printable pages.
-6. Optional mailing-list box (hidden until the Kit form exists).
+6. Optional mailing-list box (hidden until the MailerLite form exists).
 7. Footer.
 
 ## Implementation
@@ -26,7 +26,7 @@ Top bar: Coloring Stories (Dreams) · For Facilities · Book Bonuses · About. M
 
 ## Stages
 1. Foundation (this PR): layout, design tokens, home, nav, all Stage 1 pages, Halloween bonus pages.
-2. Halloween launch: real cover art, Amazon links, Google Form per level, Kit signup, QR codes, then the custom domain (with approval).
+2. Halloween launch: real cover art, Amazon links, Google Form per level, MailerLite signup, QR codes, then the custom domain (with approval).
 3. Direct sales: Payhip checkout, facility license pages and protected delivery.
 4. Catalog expansion: Monarch's Journey, Christmas, and other titles.
 

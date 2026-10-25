@@ -1,0 +1,50 @@
+---
+layout: page
+section: facilities
+title: Register your facility license
+description: Register your Maplewing Dreams facility license and get your certificate by email.
+noindex: true
+hide_general_signup: true
+# register_form_id: MailerLite form that sends the filled-in license certificate.
+# Only linked from the facility license email, so it stays out of the menu.
+register_form_id: "201876896195020638"
+---
+<p class="lead">Tell us where your residents will be coloring. We'll email your certificate right away.</p>
+
+<form class="ml-form register-form" action="https://assets.mailerlite.com/jsonp/{{ site.mailerlite_account }}/forms/{{ page.register_form_id }}/subscribe" method="post" target="_blank" data-success="Thank you! Check your inbox. Your certificate is on its way. If you see an email asking you to confirm, tap Confirm first and your certificate will follow. If you don't see anything in a few minutes, check your spam or promotions folder." data-error="Sorry, that didn't go through. Please check each box and try again, or write to {{ site.facilities_email }}.">
+  <div class="ml-fields">
+    <p class="ml-field"><label for="reg-email">Email you used at checkout</label>
+      <input id="reg-email" type="email" name="fields[email]" autocomplete="email" required></p>
+    <p class="ml-field"><label for="reg-order">Payhip order number</label>
+      <span class="ml-help" id="reg-order-help">It's in your receipt email.</span>
+      <input id="reg-order" type="text" name="fields[license_order_number]" aria-describedby="reg-order-help" autocomplete="off" required></p>
+    <p class="ml-field"><label for="reg-company">Facility name</label>
+      <input id="reg-company" type="text" name="fields[company]" autocomplete="organization" required></p>
+    <p class="ml-field"><label for="reg-street">Street address</label>
+      <input id="reg-street" type="text" name="fields[facility_street_address]" autocomplete="street-address" required></p>
+    <p class="ml-field"><label for="reg-city">City</label>
+      <input id="reg-city" type="text" name="fields[city]" autocomplete="address-level2" required></p>
+    <p class="ml-field"><label for="reg-state">State</label>
+      <input id="reg-state" type="text" name="fields[state]" autocomplete="address-level1" required></p>
+    <p class="ml-field"><label for="reg-zip">ZIP code</label>
+      <input id="reg-zip" type="text" name="fields[z_i_p]" autocomplete="postal-code" inputmode="numeric" required></p>
+  </div>
+  <input type="hidden" name="fields[license_date]" class="license-date" value="">
+  <input type="hidden" name="ml-submit" value="1"><input type="hidden" name="anticsrf" value="true">
+  <button type="submit" class="button">Register my license</button>
+  <p class="ml-message" role="status" aria-live="polite" hidden></p>
+</form>
+
+<p class="small">Have more than one location? Email <a href="mailto:{{ site.facilities_email }}">{{ site.facilities_email }}</a> and we'll work out a fair price.</p>
+
+<script>
+  // The certificate shows the day the license was registered, written out like "October 20, 2026".
+  (function () {
+    var field = document.querySelector('.license-date');
+    function today() {
+      field.value = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    }
+    today();
+    field.form.addEventListener('submit', today, true);
+  })();
+</script>
