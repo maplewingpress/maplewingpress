@@ -5,8 +5,8 @@ The QR code in each book opens that level's printable-pages page (`/dreams/hallo
 1. The reader picks Amazon, a store, or a gift, and types the order or receipt number. Store and gift readers can add a photo of the receipt (or gift receipt) instead.
 2. The script saves any photo in a private Drive folder ("Maplewing receipt photos") and reads it with Google's free text reader (OCR): store, date and receipt number.
 3. Every check becomes one row in the Google Sheet "Purchase checks".
-4. The same order or receipt number opens each level's pages **twice**. The third try shows: "This receipt has already been used twice. If you need to download your pages again, please email support@maplewingpress.com and we will help."
-5. When the check passes, the page shows the Drive download button and the two book-owner links (Family Set $15, facility license $36).
+4. The same order or receipt number opens each level's pages **three times** (Tracy, Oct 26). The fourth try shows: "This receipt has already been used three times. If you need to download your pages again, please email support@maplewingpress.com and we will help."
+5. When the check passes, the page shows the Drive download button and the two book-owner links (Family Set $15, facility license $36), with a note to bookmark the page. The page remembers the check on that phone or computer, so coming back to the bookmark opens the download straight away and doesn't use up a check.
 
 The Drive links and the book-owner links live only in the script, never on the website.
 
@@ -15,14 +15,14 @@ The Drive links and the book-owner links live only in the script, never on the w
 - Amazon numbers are checked for the right shape (17 numbers) and for reuse. Nobody outside Amazon can confirm that an order is real.
 - A blurry or folded receipt photo may not read. The photo is still saved, so you can look at it in the Sheet.
 - A gift needs a gift receipt number or photo, like any other receipt. A reader with no gift receipt is asked to email support@maplewingpress.com.
-- One Amazon order can include all three books, so each level counts its own two uses.
+- One Amazon order can include all three books, so each level counts its own three uses.
+- The "remember me" only works on the same phone or computer and browser. On a new device, or after clearing the browser, the reader checks again (and that counts as a use).
 - Nothing is emailed. The "already used" message shows on the screen.
 
 ## Steps
 
-### 1. Make the Sheet
-1. Go to sheets.google.com and make a blank spreadsheet. Name it **Maplewing Purchase Checks**.
-2. Copy its ID from the address bar: the long part between `/d/` and `/edit`.
+### 1. The Sheet (already made)
+Claude made it on Oct 26: **Maplewing Purchase Checks**, in Drive › MapleWing › Website, with a "Purchase checks" tab and headings. Its ID (for step 3) is `18ioNAmuW6hV3jPbmI7firfv8ykI0rSQHaOnktepL0J8`.
 
 ### 2. Make the script
 1. Go to script.google.com and click **New project**. Name it **Maplewing purchase check**.
@@ -34,7 +34,7 @@ Click the gear (**Project Settings**), scroll to **Script Properties**, and add 
 
 | Property | Value |
 | --- | --- |
-| `SHEET_ID` | the Sheet ID from step 1 |
+| `SHEET_ID` | `18ioNAmuW6hV3jPbmI7firfv8ykI0rSQHaOnktepL0J8` |
 | `DOWNLOAD_E1` | Easy download link (`https://drive.google.com/uc?export=download&id=1RPBFmLKrkJVkMQ0bo0B97iC4i6QzqO-Q`) |
 | `DOWNLOAD_E2` | Easier download link (`https://drive.google.com/uc?export=download&id=1ACxRdAj1AvyTKmRkTwhlGCJR_jmtE1a-`) |
 | `DOWNLOAD_E3` | Easiest download link (`https://drive.google.com/uc?export=download&id=1oEVvyiiPNURp5prUTeCampPksvMbNrnH`) |

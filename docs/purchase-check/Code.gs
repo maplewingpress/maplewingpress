@@ -5,7 +5,7 @@
  * order number or a photo of their receipt. It reads the receipt with Google's
  * free OCR, logs the purchase in the "Purchase checks" sheet, counts how many
  * times that order or receipt has been used, and answers with the download link
- * (first two uses) or a "this receipt has been used" message (third use on).
+ * (first three uses) or a "this receipt has been used" message (fourth use on).
  *
  * Nothing private lives in the website: the Drive download links and the hidden
  * book-owner Payhip links are kept in this script's Script Properties.
@@ -13,7 +13,7 @@
  * Setup: see docs/purchase-check/SETUP.md.
  */
 
-var MAX_USES = 2;            // a receipt or order number unlocks the pages this many times
+var MAX_USES = 3;            // a receipt or order number unlocks the pages this many times
 var SHEET_NAME = 'Purchase checks';
 var RECEIPT_FOLDER = 'Maplewing receipt photos';
 var LEVELS = { E1: 'Easy', E2: 'Easier', E3: 'Easiest' };
@@ -61,7 +61,7 @@ function check_(data) {
   // Tracy, Oct 26: gifts need a gift receipt number or photo too.
   if (source === 'gift' && !typed && !photoUrl) return { ok: false, reason: 'need_gift' };
 
-  // The purchase key is what the two-use limit counts: the level plus the order or
+  // The purchase key is what the use limit counts: the level plus the order or
   // receipt number, or (when a photo has no readable number) the photo itself. One
   // Amazon order can hold all three levels, so each level counts on its own.
   var id = amazon || (typed ? normalize_(typed) : (photoHash ? 'PHOTO-' + photoHash : ''));

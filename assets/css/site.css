@@ -290,3 +290,4 @@ a.sheet-paper:focus-visible { outline-offset: 6px; }
 .pc-result h2 { font-size: 1.35rem; margin: 1.4rem 0 .4rem; }
 .pc-source .ml-check { align-items: center; margin-bottom: .6rem; }
 .pc-source .ml-check input { margin: 0; }
+.pc-result .pc-bookmark { border-left: 6px solid var(--gold); padding-left: 1rem; }

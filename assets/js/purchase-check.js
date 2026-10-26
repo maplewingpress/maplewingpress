@@ -13,7 +13,7 @@
   var support = 'support@maplewingpress.com';
 
   var MESSAGES = {
-    used: 'This receipt has already been used twice. If you need to download your pages again, please email ' + support + ' and we will help.',
+    used: 'This receipt has already been used three times. If you need to download your pages again, please email ' + support + ' and we will help.',
     amazon_format: 'That doesn\'t look like an Amazon order number. It has 17 numbers, like 123-1234567-1234567. You can find it in your Amazon account under Your Orders.',
     need_details: 'Please type your receipt number, or add a photo of your receipt.',
     need_gift: 'Please type the number on your gift receipt, or add a photo of it. No gift receipt? Email ' + support + ' and we will send your pages.',
@@ -31,12 +31,12 @@
     r.addEventListener('change', function () { showFor(source()); });
   });
 
-  function show(nodes, ok) {
+  function show(nodes, ok, quiet) {
     result.innerHTML = '';
     nodes.forEach(function (n) { result.appendChild(n); });
     result.classList.toggle('is-error', !ok);
     result.hidden = false;
-    result.focus();
+    if (!quiet) result.focus();
   }
   function para(text, cls) {
     var p = document.createElement('p');
@@ -72,11 +72,22 @@
     });
   }
 
-  function success(data) {
+  // Remembers a passed check on this phone or computer, so a reader who comes
+  // back to this page (or its bookmark) gets the download without checking again.
+  var saveKey = 'maplewing-pages-' + form.dataset.level;
+  function remember(data) {
+    try { localStorage.setItem(saveKey, JSON.stringify({ link: data.link, family: data.family, facility: data.facility })); } catch (e) {}
+  }
+  function remembered() {
+    try { var d = JSON.parse(localStorage.getItem(saveKey)); return d && d.link ? d : null; } catch (e) { return null; }
+  }
+
+  function success(data, quiet) {
     var nodes = [para('Thank you! Here are your printable pages.', 'pc-ok')];
     var p = document.createElement('p');
     p.appendChild(link(data.link, 'Download my printable pages', 'button'));
     nodes.push(p);
+    nodes.push(para('Bookmark this page or add it to your home screen. When you come back on this phone or computer, your download will be right here, with no need to check your receipt again.', 'pc-bookmark'));
     nodes.push(para('Print one side only, on plain or heavier paper. These pages are for your household, or private caregiving for up to four people. Please don\'t share the link or post the files online.', 'small'));
     if (data.family || data.facility) {
       var h = document.createElement('h2');
@@ -92,8 +103,12 @@
       nodes.push(ul);
     }
     fields.hidden = true;
-    show(nodes, true);
+    remember(data);
+    show(nodes, true, quiet);
   }
+
+  var saved = remembered();
+  if (saved) success(saved, true);
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
