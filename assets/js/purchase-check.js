@@ -16,6 +16,7 @@
     used: 'This receipt has already been used twice. If you need to download your pages again, please email ' + support + ' and we will help.',
     amazon_format: 'That doesn\'t look like an Amazon order number. It has 17 numbers, like 123-1234567-1234567. You can find it in your Amazon account under Your Orders.',
     need_details: 'Please type your receipt number, or add a photo of your receipt.',
+    need_gift: 'Please type the number on your gift receipt, or add a photo of it. No gift receipt? Email ' + support + ' and we will send your pages.',
     error: 'Something went wrong on our side. Please try again in a minute, or email ' + support + ' and we will send your pages.'
   };
 
@@ -24,7 +25,7 @@
   function showFor(s) {
     help.textContent = help.dataset[s];
     form.querySelectorAll('.pc-store-only').forEach(function (el) { el.hidden = s !== 'store'; });
-    form.querySelectorAll('.pc-gift-only').forEach(function (el) { el.hidden = s !== 'gift'; });
+    form.querySelectorAll('.pc-photo-field').forEach(function (el) { el.hidden = s === 'amazon'; });
   }
   form.querySelectorAll('input[name="source"]').forEach(function (r) {
     r.addEventListener('change', function () { showFor(source()); });
@@ -98,9 +99,10 @@
     e.preventDefault();
     var s = source();
     var typed = number.value.trim();
-    var file = s === 'store' && photo.files[0];
+    var file = s !== 'amazon' && photo.files[0];
     if (s === 'amazon' && !typed) return show([para('Please type your Amazon order number.')], false);
     if (s === 'store' && !typed && !file) return show([para(MESSAGES.need_details)], false);
+    if (s === 'gift' && !typed && !file) return show([para(MESSAGES.need_gift)], false);
     button.disabled = true;
     button.textContent = 'Checking…';
     readPhoto(file).then(function (dataUrl) {

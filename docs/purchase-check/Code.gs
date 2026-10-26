@@ -58,11 +58,12 @@ function check_(data) {
 
   if (source === 'amazon' && !amazon) return { ok: false, reason: 'amazon_format' };
   if (source === 'store' && !typed && !photoUrl) return { ok: false, reason: 'need_details' };
+  // Tracy, Oct 26: gifts need a gift receipt number or photo too.
+  if (source === 'gift' && !typed && !photoUrl) return { ok: false, reason: 'need_gift' };
 
   // The purchase key is what the two-use limit counts: the level plus the order or
   // receipt number, or (when a photo has no readable number) the photo itself. One
-  // Amazon order can hold all three levels, so each level counts on its own. A gift
-  // with nothing typed has no key and is only logged.
+  // Amazon order can hold all three levels, so each level counts on its own.
   var id = amazon || (typed ? normalize_(typed) : (photoHash ? 'PHOTO-' + photoHash : ''));
   var key = id ? level + ' ' + id : '';
 

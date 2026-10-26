@@ -2,7 +2,7 @@
 
 The QR code in each book opens that level's printable-pages page (`/dreams/halloween/e1/print/`, `e2`, `e3`). The page thanks the reader and asks for a short purchase check. The check runs as a small Google Apps Script in Tracy's own Google account:
 
-1. The reader picks Amazon, a store, or a gift, and types the order or receipt number. Store buyers can add a photo of the receipt instead.
+1. The reader picks Amazon, a store, or a gift, and types the order or receipt number. Store and gift readers can add a photo of the receipt (or gift receipt) instead.
 2. The script saves any photo in a private Drive folder ("Maplewing receipt photos") and reads it with Google's free text reader (OCR): store, date and receipt number.
 3. Every check becomes one row in the Google Sheet "Purchase checks".
 4. The same order or receipt number opens each level's pages **twice**. The third try shows: "This receipt has already been used twice. If you need to download your pages again, please email support@maplewingpress.com and we will help."
@@ -14,7 +14,7 @@ The Drive links and the book-owner links live only in the script, never on the w
 
 - Amazon numbers are checked for the right shape (17 numbers) and for reuse. Nobody outside Amazon can confirm that an order is real.
 - A blurry or folded receipt photo may not read. The photo is still saved, so you can look at it in the Sheet.
-- A gift with no receipt can't be counted, so gifts are logged but never blocked.
+- A gift needs a gift receipt number or photo, like any other receipt. A reader with no gift receipt is asked to email support@maplewingpress.com.
 - One Amazon order can include all three books, so each level counts its own two uses.
 - Nothing is emailed. The "already used" message shows on the screen.
 

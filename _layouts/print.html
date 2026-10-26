@@ -20,12 +20,12 @@ layout: default
       </fieldset>
 
       <div class="ml-field">
-        <label for="pc-number">Order or receipt number <span class="ml-optional pc-gift-only" hidden>(if you have one)</span></label>
-        <span class="ml-help pc-help" data-amazon="Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567." data-store="Type the number printed on your receipt, or add a photo of the receipt below." data-gift="If the giver included a gift receipt, type its number. If not, you can leave this blank.">Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567.</span>
+        <label for="pc-number">Order or receipt number</label>
+        <span class="ml-help pc-help" data-amazon="Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567." data-store="Type the number printed on your receipt, or add a photo of the receipt below." data-gift="Type the number on your gift receipt, or add a photo of it below.">Find it in your Amazon account under Your Orders. It looks like 123-1234567-1234567.</span>
         <input type="text" id="pc-number" name="number" autocomplete="off" inputmode="text">
       </div>
 
-      <div class="ml-field pc-store-only" hidden>
+      <div class="ml-field pc-photo-field" hidden>
         <label for="pc-photo">Photo of your receipt <span class="ml-optional">(optional)</span></label>
         <span class="ml-help">Take a clear picture of the whole receipt. We read the store, date and receipt number from it.</span>
         <input type="file" id="pc-photo" name="photo" accept="image/*">
