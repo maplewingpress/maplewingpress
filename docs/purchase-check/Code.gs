@@ -1,6 +1,9 @@
 /**
  * Maplewing Press purchase check (Google Apps Script web app).
  *
+ * It lives inside the "Maplewing Purchase Checks" sheet (Extensions > Apps Script),
+ * and the private links are pasted in beside it as a second file, Links.gs.
+ *
  * The printable-pages pages (/dreams/halloween/eN/print) send this the buyer's
  * order number or a photo of their receipt. It reads the receipt with Google's
  * free OCR, logs the purchase in the "Purchase checks" sheet, counts how many
@@ -85,13 +88,21 @@ function check_(data) {
 
   if (!allowed) return { ok: false, reason: 'used' };
 
-  var p = PropertiesService.getScriptProperties();
   return {
     ok: true,
-    link: p.getProperty('DOWNLOAD_' + book + '_' + level),
-    family: p.getProperty('OWNER_FAMILY_SET'),
-    facility: p.getProperty('OWNER_FACILITY')
+    link: link_('DOWNLOAD_' + book + '_' + level),
+    family: link_('OWNER_FAMILY_SET'),
+    facility: link_('OWNER_FACILITY')
   };
+}
+
+/**
+ * The private links. They come from Links.gs (pasted in beside this file), or from
+ * Script Properties if they were set up that way instead.
+ */
+function link_(name) {
+  if (typeof LINKS === 'object' && LINKS[name]) return LINKS[name];
+  return PropertiesService.getScriptProperties().getProperty(name);
 }
 
 /** Saves the receipt photo privately in Drive and returns its OCR text. */
@@ -139,7 +150,10 @@ function countUses_(sheet, key) {
 }
 
 function sheet_() {
-  var ss = SpreadsheetApp.openById(PropertiesService.getScriptProperties().getProperty('SHEET_ID'));
+  // The script lives inside the Purchase Checks sheet, so it just uses that one.
+  // (SHEET_ID is only needed if the script is ever moved out of the sheet.)
+  var id = PropertiesService.getScriptProperties().getProperty('SHEET_ID');
+  var ss = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.getActiveSpreadsheet();
   var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(['When', 'Book', 'Level', 'Bought from', 'Purchase key', 'Number given', 'Store',
