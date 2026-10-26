@@ -23,9 +23,8 @@ One sheet holds every book. Each row names the book and the level, so you can so
 1. In that sheet, choose **Extensions** › **Apps Script**. A code window opens in a new tab.
 2. Where it says the project name (top left, probably "Untitled project"), type **Maplewing purchase check**.
 3. Select everything in the code box and delete it. Paste in all of `Code.gs` (the file beside this one). Click the save icon.
-4. Click the **+** next to **Files** (top left) › **Script**. Name it **Links** and press enter.
-5. Delete what's in that new box, and paste in all of `Links.gs` (in the same folder as these steps, and in Drive). That file holds your private links, so it is never in the website's code. Click save.
-6. On the left, click **+** next to **Services**, choose **Drive API**, set the version to **v2**, and click **Add**. (This turns on the receipt reader.)
+4. Click at the very end of that code (after the last `}`), press Enter a couple of times, and paste in all of `Links.gs` underneath (it's in the same folder as these steps, and in Drive). That part holds your private links, so it is never in the website's code. Click save. (It can also go in a separate script file; either way works.)
+5. On the left, click **+** next to **Services**, choose **Drive API**, set the version to **v2**, and click **Add**. (This turns on the receipt reader.)
 
 ### 3. Publish it
 1. Click **Deploy** (top right) › **New deployment**. Click the gear next to "Select type" and choose **Web app**.
