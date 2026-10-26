@@ -24,6 +24,8 @@ The Drive links and the book-owner links live only in the script, never on the w
 ### 1. The Sheet (already made)
 Claude made it on Oct 26: **Maplewing Purchase Checks**, in Drive › MapleWing › Website, with a "Purchase checks" tab and headings. Its ID (for step 3) is `18ioNAmuW6hV3jPbmI7firfv8ykI0rSQHaOnktepL0J8`.
 
+One sheet holds every book. Each row names the book ("Halloween Coloring Story") and the level, so you can sort or filter by book.
+
 ### 2. Make the script
 1. Open the **Maplewing Purchase Checks** sheet and choose **Extensions** › **Apps Script**. (This keeps the script inside the sheet, so it isn't a loose file in Drive.) Name the project **Maplewing purchase check**.
 2. Delete what's in the editor and paste everything from `Code.gs` (in this folder). Click the save icon.
@@ -35,9 +37,9 @@ Click the gear (**Project Settings**), scroll to **Script Properties**, and add 
 | Property | Value |
 | --- | --- |
 | `SHEET_ID` | `18ioNAmuW6hV3jPbmI7firfv8ykI0rSQHaOnktepL0J8` |
-| `DOWNLOAD_E1` | Easy download link (`https://drive.google.com/uc?export=download&id=1RPBFmLKrkJVkMQ0bo0B97iC4i6QzqO-Q`) |
-| `DOWNLOAD_E2` | Easier download link (`https://drive.google.com/uc?export=download&id=1ACxRdAj1AvyTKmRkTwhlGCJR_jmtE1a-`) |
-| `DOWNLOAD_E3` | Easiest download link (`https://drive.google.com/uc?export=download&id=1oEVvyiiPNURp5prUTeCampPksvMbNrnH`) |
+| `DOWNLOAD_HALLOWEEN_E1` | Easy download link (`https://drive.google.com/uc?export=download&id=1RPBFmLKrkJVkMQ0bo0B97iC4i6QzqO-Q`) |
+| `DOWNLOAD_HALLOWEEN_E2` | Easier download link (`https://drive.google.com/uc?export=download&id=1ACxRdAj1AvyTKmRkTwhlGCJR_jmtE1a-`) |
+| `DOWNLOAD_HALLOWEEN_E3` | Easiest download link (`https://drive.google.com/uc?export=download&id=1oEVvyiiPNURp5prUTeCampPksvMbNrnH`) |
 | `OWNER_FAMILY_SET` | `https://payhip.com/b/i5vnX` |
 | `OWNER_FACILITY` | `https://payhip.com/b/s3Ru7` |
 
@@ -50,6 +52,12 @@ If the Payhip thread makes new book-owner PDFs, swap their links in here. No web
 4. Copy the **Web app URL** (it ends in `/exec`) and send it in the Website thread.
 
 Claude puts that URL in `purchase_check_url` in `_config.yml`, tests each level on a phone, and the QR pages switch from "Coming soon" to the check.
+
+## Adding the next book (Christmas and after)
+1. In `Code.gs`, add a line to `BOOKS`, for example `CHRISTMAS: 'Christmas Coloring Story'`, and redeploy (see below).
+2. Add that book's three links in Script Properties: `DOWNLOAD_CHRISTMAS_E1`, `_E2`, `_E3`.
+3. The new book's printable-pages pages carry `book_code: christmas` in the website.
+Nothing else changes: the same sheet, the same web app link, the same QR pages.
 
 ## Later changes
 - To change the number of uses, edit `MAX_USES` at the top of the script, then **Deploy** › **Manage deployments** › pencil › Version: **New version** › **Deploy**. The URL stays the same.

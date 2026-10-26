@@ -74,7 +74,7 @@
 
   // Remembers a passed check on this phone or computer, so a reader who comes
   // back to this page (or its bookmark) gets the download without checking again.
-  var saveKey = 'maplewing-pages-' + form.dataset.level;
+  var saveKey = 'maplewing-pages-' + form.dataset.book + '-' + form.dataset.level;
   function remember(data) {
     try { localStorage.setItem(saveKey, JSON.stringify({ link: data.link, family: data.family, facility: data.facility })); } catch (e) {}
   }
@@ -122,6 +122,7 @@
     button.textContent = 'Checking…';
     readPhoto(file).then(function (dataUrl) {
       var body = {
+        book: form.dataset.book,
         level: form.dataset.level,
         source: s,
         number: typed,

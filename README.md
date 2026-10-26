@@ -34,7 +34,7 @@ Older addresses still forward to the pages above, so nothing printed breaks: `/d
 
 ## Common edits
 
-- **Turn on the printable pages (purchase check):** set up the Google Apps Script in `docs/purchase-check/` (steps in `SETUP.md`), then paste its web app link into `purchase_check_url` in `_config.yml`. The script, not this repository, holds the Drive download links and the book-owner Payhip links. Each page sends its `level_code` (E1, E2, E3).
+- **Turn on the printable pages (purchase check):** set up the Google Apps Script in `docs/purchase-check/` (steps in `SETUP.md`), then paste its web app link into `purchase_check_url` in `_config.yml`. The script, not this repository, holds the Drive download links and the book-owner Payhip links. Each page sends its `book_code` (halloween) and `level_code` (E1, E2, E3).
 - **Mailing list (MailerLite):** the signup forms are the site's own forms (`_includes/ml-form.html`), styled like the site, that post straight to MailerLite. No form design is needed in MailerLite. Each printable-pages page has its own form id in `signup_form_id` (its level group). The facilities page uses `open_notify_form_id` and `collection_notify_form_id`. The general invitation on every other page (a band above the footer and a box that slides in from the side) uses `signup_form_id` in `_config.yml`. A blank id hides that form. The account number is `mailerlite_account`.
 - **Add a new book:** copy the `dreams/halloween/` folder, rename it, and change the words.
 
