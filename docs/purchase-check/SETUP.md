@@ -25,7 +25,7 @@ The Drive links and the book-owner links live only in the script, never on the w
 Claude made it on Oct 26: **Maplewing Purchase Checks**, in Drive › MapleWing › Website, with a "Purchase checks" tab and headings. Its ID (for step 3) is `18ioNAmuW6hV3jPbmI7firfv8ykI0rSQHaOnktepL0J8`.
 
 ### 2. Make the script
-1. Go to script.google.com and click **New project**. Name it **Maplewing purchase check**.
+1. Open the **Maplewing Purchase Checks** sheet and choose **Extensions** › **Apps Script**. (This keeps the script inside the sheet, so it isn't a loose file in Drive.) Name the project **Maplewing purchase check**.
 2. Delete what's in the editor and paste everything from `Code.gs` (in this folder). Click the save icon.
 3. On the left, click **+** next to **Services**, choose **Drive API**, set the version to **v2**, and click **Add**. (This turns on the receipt reader.)
 
