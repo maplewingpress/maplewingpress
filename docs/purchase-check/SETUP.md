@@ -15,7 +15,7 @@ The download links and the book-owner links live only in this script, never on t
 ## The steps
 
 ### 1. Open the sheet
-Open **Maplewing Purchase Checks** in Drive › MapleWing › Website. Claude made it on Oct 26 with the right headings, so there is nothing to set up in it. (If you made another sheet of your own, you can delete it. You never need a sheet ID: the script lives inside this sheet and writes to it by itself.)
+Open **Maplewing Purchase Checks** in Drive › MapleWing › Website. Claude made it on Oct 26 with the right headings, so there is nothing to set up in it. You never need a sheet ID: the script lives inside this sheet and writes to it by itself.
 
 One sheet holds every book. Each row names the book and the level, so you can sort or filter by book.
 
