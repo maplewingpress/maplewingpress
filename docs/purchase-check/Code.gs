@@ -11,7 +11,7 @@
  * (first three uses) or a "this receipt has been used" message (fourth use on).
  *
  * Nothing private lives in the website: the Drive download links and the hidden
- * book-owner Payhip links are kept in this script's Script Properties.
+ * book-owner Payhip links are kept in Links.gs, beside this file.
  *
  * Setup: see docs/purchase-check/SETUP.md.
  */
