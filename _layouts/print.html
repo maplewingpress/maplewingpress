@@ -4,7 +4,7 @@ layout: default
 <div class="wrap narrow page print-page">
   <p class="eyebrow">For owners of {{ page.book }}</p>
   <h1>Thank you so much for your purchase</h1>
-  <p class="lead">We're so delighted to have you here. Your <strong>{{ page.level_name }}</strong> book includes printable copies of all {{ page.page_count }} pages, so you can print a favorite and color it again, as often as you like at home. First, please take a moment for this short purchase check.</p>
+  <p class="lead">We're so delighted to have you here. Your <strong>{{ page.level_name }}</strong> book includes printable copies of all {{ page.page_count }} pages, so you can print a favorite and color it again, as often as you like at home. No email address is needed for your printing rights. First, please take a moment for this short purchase check.</p>
 
   {% if site.purchase_check_url and site.purchase_check_url != "" and page.level_code and page.book_code %}
   <form class="purchase-check" action="{{ site.purchase_check_url }}" method="post" novalidate

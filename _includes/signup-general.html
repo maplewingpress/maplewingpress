@@ -14,7 +14,7 @@
     </div>
     <div>
       {% include ml-form.html form_id=site.signup_form_id uid="band" button="Join the list" success=join_ok %}
-      <p class="small">A welcome email, one follow-up, then about one email a month.</p>
+      <p class="small">We ask for your email so we can send you the bonus pages. A welcome email, one follow-up, then about one email a month. We never share your email.</p>
     </div>
   </div>
 </section>
@@ -23,7 +23,7 @@
   <h2 id="slide-h">Join the Maplewing Dreams mailing list</h2>
   <p>Get free bonus pages every month and news of new book releases. Unsubscribe anytime.</p>
   {% include ml-form.html form_id=site.signup_form_id uid="slide" button="Join the list" success=join_ok %}
-  <p class="small">A welcome email, one follow-up, then about one email a month.</p>
+  <p class="small">We ask for your email so we can send you the bonus pages. About one email a month. We never share your email.</p>
 </aside>
 <script src="{{ '/assets/js/signup-slide.js' | relative_url }}" defer></script>
 {% endunless %}{% endif %}

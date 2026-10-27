@@ -14,6 +14,7 @@ register_form_id: "201876896195020638"
 <form class="ml-form register-form" action="https://assets.mailerlite.com/jsonp/{{ site.mailerlite_account }}/forms/{{ page.register_form_id }}/subscribe" method="post" target="_blank" data-success="Thank you! Check your inbox. Your certificate is on its way. If you see an email asking you to confirm, tap Confirm first and your certificate will follow. If you don't see anything in a few minutes, check your spam or promotions folder." data-error="Sorry, that didn't go through. Please check each box and try again, or write to {{ site.facilities_email }}.">
   <div class="ml-fields">
     <p class="ml-field"><label for="reg-email">Email you used at checkout</label>
+      <span class="ml-help">We send your certificate here.</span>
       <input id="reg-email" type="email" name="fields[email]" autocomplete="email" required></p>
     <p class="ml-field"><label for="reg-order">Payhip order number</label>
       <span class="ml-help" id="reg-order-help">It's in your receipt email.</span>
