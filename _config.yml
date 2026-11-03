@@ -29,3 +29,10 @@ family_set_key: "av4xf"
 exclude:
   - README.md
   - docs/
+
+# Amazon paperback links for each Halloween level. For now these are Amazon searches by ISBN,
+# which open the book's listing; swap in the exact product links (amazon.com/dp/...) when we have them.
+amazon:
+  e1: "https://www.amazon.com/s?k=9798982221902"
+  e2: "https://www.amazon.com/s?k=9798982221919"
+  e3: "https://www.amazon.com/s?k=9798982221926"
